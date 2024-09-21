@@ -1,0 +1,9 @@
+{
+  "type": "commonjs",
+  "dependencies": {
+    "<NPM_PACKAGE_NAME>": "*"
+  },
+  "scripts": {
+    "postinstall": "yarn link <NPM_PACKAGE_NAME>"
+  }
+}
