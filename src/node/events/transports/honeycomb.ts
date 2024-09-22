@@ -1,5 +1,5 @@
 import { defaultLogger } from '@/common/constants.js';
-import { AoEvent, IEventTransport } from '@/common/events/event-transport.js';
+import { AoEvent, IEventTransport } from '@/types/events.js';
 import { isAoEvent } from '@/utils/ao.js';
 import { ILogger } from '@/utils/logger.js';
 import BetterSQLite3 from 'better-sqlite3';

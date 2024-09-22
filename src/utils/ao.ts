@@ -1,4 +1,4 @@
-import { AoEvent } from '@/common/events/event-transport.js';
+import { AoEvent } from '@/types/events.js';
 import { z } from 'zod';
 
 import { AoSigner } from '../types/ao.js';
