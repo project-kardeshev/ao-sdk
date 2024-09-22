@@ -1,4 +1,6 @@
+import { AoEvent } from '@/common/events/event-transport.js';
 import { z } from 'zod';
+
 import { AoSigner } from '../types/ao.js';
 
 export function isAoSigner(value: unknown): value is AoSigner {
@@ -27,6 +29,24 @@ export function isAoSigner(value: unknown): value is AoSigner {
     );
   try {
     AoSignerSchema.parse(value);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function isAoEvent(value: unknown): value is AoEvent {
+  const AoEventSchema = z
+    .object({
+      _e: z.number(),
+      sampleRate: z.number(),
+      timestamp: z.string().optional(),
+      Timestamp: z.string().optional(),
+    })
+    .passthrough();
+
+  try {
+    AoEventSchema.parse(value);
     return true;
   } catch {
     return false;

@@ -22,8 +22,13 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
   },
+
   "include": ["src"],
   "exclude": ["lib", "node_modules", "bundles", "tests"]
 }

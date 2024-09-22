@@ -28,6 +28,7 @@ export interface ILogger {
   warn: (message: string, ...args: unknown[]) => void;
   error: (message: string, ...args: unknown[]) => void;
   debug: (message: string, ...args: unknown[]) => void;
+  child: (name: string) => ILogger;
 }
 
 export class Logger implements ILogger {
@@ -84,6 +85,11 @@ export class Logger implements ILogger {
   debug(message: string, ...args: unknown[]) {
     if (this.silent) return;
     this.logger.debug(message, ...args);
+  }
+
+  child(name: string) {
+    if (this.silent) return this;
+    return new Logger({ level: this.logger.level }).logger.child({ name });
   }
 
   setLogLevel(level: 'info' | 'debug' | 'error' | 'warn' | 'none') {
