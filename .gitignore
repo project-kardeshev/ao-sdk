@@ -1,1 +1,32 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+storybook-static
+cache
+wallet.json
+publish-wallet.json
 node_modules
+dist
+dist-ssr
+*.local
+# permaweb deploy output garbage
+dist-errors.txt
+dist-id.txt
+dist-manifest.json
+dist-csv.json
+dist-manifest.csv
+
+# Editor directories and files
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env

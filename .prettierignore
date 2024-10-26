@@ -5,3 +5,4 @@ examples/webpack/node_modules
 examples/vite/node_modules
 examples/vite/dist
 examples/vite/build
+docs

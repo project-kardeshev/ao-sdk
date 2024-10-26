@@ -4,6 +4,7 @@
   "printWidth": 80,
   "singleQuote": true,
   "trailingComma": "all",
+  "proseWrap": "always",
   "importOrder": ["<THIRD_PARTY_MODULES>", "^[.{1,2}/]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

@@ -9,15 +9,11 @@ const client = new DefaultClient();
 function App() {
   const [contract, setContract] = useState<string>('Loading...');
 
-  useEffect(() => {
-
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="App">
-      <Markdown className="markdown" remarkPlugins={[remarkGfm]}>
-    
-      </Markdown>
+      <Markdown className="markdown" remarkPlugins={[remarkGfm]}></Markdown>
     </div>
   );
 }

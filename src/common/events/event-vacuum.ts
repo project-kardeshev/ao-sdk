@@ -1,4 +1,4 @@
-import { CompositeTransport, ConsoleTransport } from './event-transport.js';
+import { CompositeTransport } from './event-transport.js';
 
 export interface IEventVacuum {
   transport: CompositeTransport;

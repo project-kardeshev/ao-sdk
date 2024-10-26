@@ -171,17 +171,44 @@ export type AoSigner = (args: {
 }) => Promise<{ id: string; raw: ArrayBuffer }>;
 
 export interface AoMemoryProvider {
-  getMemory(): Promise<WebAssembly.Memory>;
+  su: AoSU;
+  txCache: AoMessageCache;
+  getMemory(p?: {
+    timestamp?: number;
+    messageId?: string;
+  }): Promise<WebAssembly.Memory>;
   setMemory(memory: WebAssembly.Memory): Promise<void>;
   sha256(): Promise<string>;
+  getNonce(): Promise<number>;
 }
+
+export type AoEvaluationOptions = {
+  timestamp?: number;
+  messageId?: string;
+  processEvents?: boolean;
+  memory?: WebAssembly.Memory;
+};
 export interface AoCU {
-  dryrun(p: { message: AoMessage }): Promise<AoResult>;
-  result(p: { messageId: string }): Promise<AoResult>;
+  dryrun(
+    p: { message: Partial<AoMessage> },
+    options?: AoEvaluationOptions,
+  ): Promise<AoResult & { Memory?: WebAssembly.Memory }>;
+  result(
+    p: {
+      messageId: string;
+    },
+    options?: AoEvaluationOptions,
+  ): Promise<AoResult & { Memory?: WebAssembly.Memory }>;
 }
 
 export interface AoMU {
-  message(p: { message: AoMessage; signer: AoSigner }): Promise<string>;
+  message(
+    p: {
+      message: Partial<AoMessage>;
+      signer: AoSigner;
+    },
+    options?: AoEvaluationOptions,
+  ): Promise<string>;
   monitor(p: { processId: string; signer: AoSigner }): Promise<void>;
   unmonitor(p: { processId: string; signer: AoSigner }): Promise<void>;
   debug(p: {
@@ -192,58 +219,84 @@ export interface AoMU {
   }): Promise<any>;
 }
 
+export type AoSUMessageNode = {
+  message: {
+    id: string;
+    tags: { name: string; value: string }[];
+    signature: string;
+  };
+  block: string;
+  owner: {
+    address: string;
+    key: string;
+  };
+  process_id: string;
+  data: string;
+  epoch: number;
+  nonce: number;
+  timestamp: number;
+  hash_chain: string;
+};
+
+export type AoSUPage = {
+  page_info: {
+    has_next_page: boolean;
+  };
+  edges: {
+    cursor: string;
+    node: AoSUMessageNode;
+  }[];
+};
+
 export interface AoSU {
-  messages(p: {
-    processId: string;
+  getProcessMessages(p: {
+    // GET /{process-id}
+    processId: string; // path param
     from?: number; // 	the Unix Timestamp to filter all messages after or equal to this value
     to?: number; // the Unix Timestamp to filter all messages before or equal to this value
-  }): Promise<{
-    page_info: {
-      has_next_page: boolean;
-    };
-    edges: {
-      cursor: string;
-      node: {
-        message: {
-          id: string;
-          tags: { name: string; value: string }[];
-          signature: string;
-        };
-        block: string;
-        owner: {
-          address: string;
-          key: string;
-        };
-        process_id: string;
-        data: string;
-        epoch: number;
-        nonce: number;
-        timestamp: number;
-        hash_chain: string;
-      };
-    }[];
-  }>;
+    limit?: number; // the maximum number of messages to return
+  }): Promise<AoSUPage>;
+  getProcessMessage(p: {
+    /// GET /{message-id}?process-id={process-id}
+    messageId: string;
+    processId: string;
+  }): Promise<AoSUMessageNode>;
 }
 
-export interface AoProcessRead {
-  memoryManager: AoMemoryProvider;
-  eventManager: EventVacuum;
-  logger: Logger;
+export interface AoCompositeProvider extends AoCU, AoMU, AoSU {
   cu: AoCU;
+  mu: AoMU;
+  su: AoSU;
+  txCache: AoMessageCache;
+  eventManager: EventVacuum;
+  memoryManager: AoMemoryProvider;
+}
 
-  read(p: {
-    tags: { name: string; value: string }[];
-    data: string | Buffer;
-    target?: string;
-  }): Promise<AoResult>;
+export interface AoProcess {
+  logger: Logger;
+  ao: AoCompositeProvider;
+  processId: string;
+}
+
+export interface AoProcessRead extends AoProcess {
+  read(
+    p: {
+      tags?: { name: string; value: string }[];
+      data?: string | number;
+      target?: string;
+    },
+    options?: AoEvaluationOptions,
+  ): Promise<AoResult>;
 }
 
 export interface AoProcessWrite extends AoProcessRead {
   signer: AoSigner;
-  txCache: AoMessageCache;
-  write(p: {
-    tags: { name: string; value: string }[];
-    data: string | Buffer;
-    target?: string;
-  }): Promise<AoResult>;
+  write(
+    p: {
+      tags?: { name: string; value: string }[];
+      data?: string | number;
+      target?: string;
+    },
+    options?: AoEvaluationOptions,
+  ): Promise<AoResult>;
 }

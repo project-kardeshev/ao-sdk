@@ -5,4 +5,3 @@ describe('DefaultClient', () => {
     expect(() => new DefaultClient(-1)).toThrow();
   });
 });
-
