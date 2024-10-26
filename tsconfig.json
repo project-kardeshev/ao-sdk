@@ -6,10 +6,10 @@
     "outDir": "./lib/esm",
     "listEmittedFiles": false,
     "listFiles": false,
-    "moduleResolution": "nodenext",
+    "moduleResolution": "node",
     "module": "nodenext",
     "alwaysStrict": true,
-    "types": ["node", "jest"],
+    "types": ["node"],
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -25,7 +25,8 @@
     "strictNullChecks": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@types/*": ["./src/types/*"],
     }
   },
 

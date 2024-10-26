@@ -4,14 +4,11 @@ import {
   AoMU,
   AoMemoryProvider,
   AoMessage,
-  AoResult,
   AoSU,
   AoSUMessageNode,
   AoSUPage,
   AoSigner,
 } from '@/types/ao.js';
-import { AoMessageCache } from '@/types/cache.js';
-import AoLoader from '@permaweb/ao-loader';
 
 import { EventVacuum } from '../events/event-vacuum.js';
 
