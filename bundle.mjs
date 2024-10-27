@@ -9,7 +9,6 @@ const bundle = async () => {
     minify: true,
     platform: 'browser',
     target: ['esnext'],
-    external: ['dtrace-provider'],
     format: 'esm',
     globalName: 'ao.sdk',
     plugins: [
