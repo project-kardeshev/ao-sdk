@@ -16,7 +16,11 @@ export class EventVacuum implements IEventVacuum {
       .split('\n')
       .map(this.parseJson)
       .filter(this.isEvent)
-      .map(({ _e, ...eventData }) => eventData) // Strip the "_e" flag
+      .map((data) => {
+        const eventData = data;
+        delete eventData._e;
+        return eventData;
+      }) // Strip the "_e" flag
       .map(this.normalizeTimestamps);
     this.dispatchEvents(events, processId, nonce);
   }
@@ -31,6 +35,7 @@ export class EventVacuum implements IEventVacuum {
   }
 
   // Check if the parsed object is a matching event
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   isEvent(parsed: any) {
     return parsed && typeof parsed._e === 'number' && parsed._e === 1;
   }

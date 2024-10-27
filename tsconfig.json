@@ -6,7 +6,7 @@
     "outDir": "./lib/esm",
     "listEmittedFiles": false,
     "listFiles": false,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "module": "nodenext",
     "alwaysStrict": true,
     "types": ["node"],
@@ -22,12 +22,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "strictNullChecks": true,
-    "paths": {
-      "@/*": ["./src/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@types/*": ["./src/types/*"],
-    }
+    "strictNullChecks": true
   },
 
   "include": ["src"],

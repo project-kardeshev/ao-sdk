@@ -1,5 +1,4 @@
-import { EventVacuum } from '@/common/events/event-vacuum.js';
-import { Logger } from '@/utils/logger.js';
+import { DataItem } from '@dha-team/arbundles';
 import {
   dryrun,
   message,
@@ -10,6 +9,8 @@ import {
   unmonitor,
 } from '@permaweb/aoconnect';
 
+import { EventVacuum } from '../common/index.js';
+import { Logger } from '../utils/logger.js';
 import { AoMessageCache } from './cache.js';
 
 export interface AoClient {
@@ -163,8 +164,12 @@ export type AoCheckpoint = {
   )[]; // Custom tags if necessary
 };
 
+export type DataItemPartial = Partial<
+  Pick<DataItem, 'tags' | 'data' | 'anchor'>
+>;
+
 export type AoSigner = (args: {
-  data: string | Buffer;
+  data?: string | Buffer;
   tags?: { name: string; value: string }[];
   target?: string;
   anchor?: string;
@@ -183,40 +188,51 @@ export interface AoMemoryProvider {
 }
 
 export type AoEvaluationOptions = {
-  timestamp?: number;
+  toTimestamp?: EpochTimeStamp;
+  fromTimestamp?: EpochTimeStamp;
   messageId?: string;
   processEvents?: boolean;
   memory?: WebAssembly.Memory;
 };
 export interface AoCU {
   dryrun(
-    p: { message: Partial<AoMessage> },
+    p: { message: Partial<AoMessage> & { Target: string } },
     options?: AoEvaluationOptions,
   ): Promise<AoResult & { Memory?: WebAssembly.Memory }>;
   result(
     p: {
       messageId: string;
+      processId: string;
     },
     options?: AoEvaluationOptions,
   ): Promise<AoResult & { Memory?: WebAssembly.Memory }>;
+
+  state(
+    p: { processId: string },
+    options?: AoEvaluationOptions,
+  ): Promise<WebAssembly.Memory>;
 }
 
 export interface AoMU {
   message(
-    p: {
-      message: Partial<AoMessage>;
+    p: DataItemPartial & {
+      processId: string;
       signer: AoSigner;
     },
     options?: AoEvaluationOptions,
   ): Promise<string>;
-  monitor(p: { processId: string; signer: AoSigner }): Promise<void>;
-  unmonitor(p: { processId: string; signer: AoSigner }): Promise<void>;
-  debug(p: {
-    processId: string;
-    messageId?: string;
-    page?: number;
-    pageSize?: number;
-  }): Promise<any>;
+  monitor(
+    p: DataItemPartial & {
+      processId: string;
+      signer: AoSigner;
+    },
+  ): Promise<string>;
+  unmonitor(
+    p: DataItemPartial & {
+      processId: string;
+      signer: AoSigner;
+    },
+  ): Promise<string>;
 }
 
 export type AoSUMessageNode = {
@@ -252,24 +268,39 @@ export interface AoSU {
   getProcessMessages(p: {
     // GET /{process-id}
     processId: string; // path param
-    from?: number; // 	the Unix Timestamp to filter all messages after or equal to this value
-    to?: number; // the Unix Timestamp to filter all messages before or equal to this value
-    limit?: number; // the maximum number of messages to return
+    from?: string; // 	the Unix Timestamp to filter all messages after or equal to this value
+    to?: string; // the Unix Timestamp to filter all messages before or equal to this value
+    limit?: EpochTimeStamp; // the maximum number of messages to return
   }): Promise<AoSUPage>;
   getProcessMessage(p: {
     /// GET /{message-id}?process-id={process-id}
     messageId: string;
     processId: string;
   }): Promise<AoSUMessageNode>;
+  getProcess(p: { processId: string }): Promise<DataItemPartial>;
 }
 
 export interface AoCompositeProvider extends AoCU, AoMU, AoSU {
   cu: AoCU;
   mu: AoMU;
   su: AoSU;
-  txCache: AoMessageCache;
-  eventManager: EventVacuum;
-  memoryManager: AoMemoryProvider;
+  txCache?: AoMessageCache;
+  eventManager?: EventVacuum;
+  memoryManager?: AoMemoryProvider;
+}
+
+export type ProcessConfig = {
+  logger?: Logger;
+  ao: AoCompositeProvider;
+  processId: string;
+};
+
+export type WritableProcessConfig = ProcessConfig & { signer: AoSigner };
+
+export function isWritableProcessConfig(
+  config: ProcessConfig,
+): config is WritableProcessConfig {
+  return (config as WritableProcessConfig).signer !== undefined;
 }
 
 export interface AoProcess {

@@ -1,7 +1,7 @@
-import { AoEvent } from '@/types/events.js';
 import { z } from 'zod';
 
 import { AoSigner } from '../types/ao.js';
+import { AoEvent } from '../types/events.js';
 
 export function isAoSigner(value: unknown): value is AoSigner {
   const TagSchema = z.object({

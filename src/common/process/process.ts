@@ -5,48 +5,93 @@ import {
   AoProcessRead,
   AoProcessWrite,
   AoSigner,
-} from '@/types/ao.js';
-import { Logger } from '@/utils/logger.js';
-
-export type ProcessConfig = {
-  logger: Logger;
-  ao: AoCompositeProvider;
-  processId: string;
-};
+  ProcessConfig,
+  WritableProcessConfig,
+  isWritableProcessConfig,
+} from '../../types/ao.js';
+import { Logger } from '../../utils/logger.js';
+import { defaultLogger } from '../constants.js';
+import { AO, RemoteCU } from '../index.js';
+import { RemoteMU } from '../services/mu/remote-mu.js';
+import { RemoteSU } from '../services/su/remote-su.js';
 
 export class Process implements AoProcess {
   readonly logger: Logger;
   readonly ao: AoCompositeProvider;
   readonly processId: string;
   constructor({
-    logger,
-    ao,
     processId,
+    ao,
+    logger = defaultLogger,
   }: {
-    logger: Logger;
-    ao: AoCompositeProvider;
     processId: string;
+    ao: AoCompositeProvider;
+    logger: Logger;
   }) {
     this.logger = logger;
     this.ao = ao;
     this.processId = processId;
   }
+
+  static init(
+    config: ProcessConfig & { signer: undefined | AoSigner },
+  ): ProcessReadable | ProcessWritable;
+  static init(config: ProcessConfig & { signer?: undefined }): ProcessReadable;
+  static init(config: ProcessConfig & { signer: AoSigner }): ProcessWritable;
+  static init(
+    config: ProcessConfig & { signer?: AoSigner | undefined },
+  ): ProcessReadable | ProcessWritable {
+    if (isWritableProcessConfig(config)) {
+      return new ProcessWritable(config);
+    }
+    return new ProcessReadable(config);
+  }
+
+  static async createRemoteProcess({
+    processId,
+    cuUrl,
+    muUrl,
+    suUrl,
+    signer,
+    logger,
+  }: {
+    processId: string;
+    cuUrl: string;
+    muUrl: string;
+    suUrl: string;
+    signer?: AoSigner;
+    logger?: Logger;
+  }): Promise<ProcessReadable | ProcessWritable> {
+    return Process.init({
+      processId,
+      signer,
+      logger,
+      ao: new AO({
+        cu: new RemoteCU({ cuUrl }),
+        mu: new RemoteMU({ muUrl }),
+        su: new RemoteSU({ suUrl }),
+      }),
+    });
+  }
 }
 
-export class ProcessReadable extends Process implements AoProcessRead {
-  constructor(config: ProcessConfig) {
-    super(config);
+export class ProcessReadable implements AoProcessRead {
+  readonly logger: Logger;
+  readonly ao: AoCompositeProvider;
+  readonly processId: string;
+  constructor({ logger = defaultLogger, ao, processId }: ProcessConfig) {
+    this.logger = logger;
+    this.ao = ao;
+    this.processId = processId;
   }
 
   async read(
     {
       tags,
       data,
-      target,
     }: {
       tags?: { name: string; value: string }[];
       data?: string | number;
-      target?: string;
     },
     options?: AoEvaluationOptions,
   ) {
@@ -54,14 +99,14 @@ export class ProcessReadable extends Process implements AoProcessRead {
       this.logger.info('Dryrun', {
         tags,
         data,
-        target,
+        target: this.processId,
       });
       const result = await this.ao.dryrun(
         {
           message: {
             Tags: tags,
             Data: data,
-            Target: target,
+            Target: this.processId,
           },
         },
         options,
@@ -77,8 +122,11 @@ export class ProcessReadable extends Process implements AoProcessRead {
 }
 
 export class ProcessWritable extends ProcessReadable implements AoProcessWrite {
+  declare logger: Logger;
+  declare ao: AoCompositeProvider;
+  declare processId: string;
   readonly signer: AoSigner;
-  constructor({ signer, ...config }: ProcessConfig & { signer: AoSigner }) {
+  constructor({ signer, ...config }: WritableProcessConfig) {
     super(config);
     this.signer = signer;
   }
@@ -87,11 +135,9 @@ export class ProcessWritable extends ProcessReadable implements AoProcessWrite {
     {
       tags,
       data,
-      target,
     }: {
       tags?: { name: string; value: string }[];
-      data?: string | number;
-      target?: string;
+      data?: string;
     },
     options?: AoEvaluationOptions,
   ) {
@@ -99,22 +145,23 @@ export class ProcessWritable extends ProcessReadable implements AoProcessWrite {
       this.logger.info('Message', {
         tags,
         data,
-        target,
+        target: this.processId,
       });
       const messageId = await this.ao.message(
         {
-          message: {
-            Tags: tags,
-            Data: data,
-            Target: target,
-          },
+          tags,
+          data,
+          processId: this.processId,
           signer: this.signer,
         },
         options,
       );
       this.logger.info('Message ID', messageId);
 
-      const result = await this.ao.result({ messageId }, options);
+      const result = await this.ao.result(
+        { messageId, processId: this.processId },
+        options,
+      );
       this.logger.info(`Result for ${messageId}`, result);
 
       return result;

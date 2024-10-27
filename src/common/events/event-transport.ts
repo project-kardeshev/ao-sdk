@@ -1,6 +1,5 @@
-import { AoEvent, IEventTransport } from '@/types/events.js';
-import { ILogger } from '@/utils/logger.js';
-
+import { AoEvent, IEventTransport } from '../../types/events.js';
+import { ILogger } from '../../utils/logger.js';
 import { defaultLogger } from '../constants.js';
 
 export class CompositeTransport {
