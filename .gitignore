@@ -20,6 +20,8 @@ dist-id.txt
 dist-manifest.json
 dist-csv.json
 dist-manifest.csv
+bundles
+lib
 
 # Editor directories and files
 .idea

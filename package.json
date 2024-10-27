@@ -31,8 +31,7 @@
   "keywords": [
     "arweave",
     "ar",
-    "blockchain",
-    "ar.io"
+    "blockchain"
   ],
   "exports": {
     ".": {
@@ -94,8 +93,8 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/cli": "17.6.7",
+    "@commitlint/config-conventional": "17.6.7",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.0",

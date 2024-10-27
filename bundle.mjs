@@ -9,8 +9,9 @@ const bundle = async () => {
     minify: true,
     platform: 'browser',
     target: ['esnext'],
+    external: ['dtrace-provider'],
     format: 'esm',
-    globalName: 'ar.io',
+    globalName: 'ao.sdk',
     plugins: [
       polyfillNode({
         polyfills: {
