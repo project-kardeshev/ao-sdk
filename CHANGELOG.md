@@ -1,3 +1,21 @@
+# 1.0.0-alpha.1 (2024-10-27)
+
+
+### Bug Fixes
+
+* **build:** fix dtrace issues in build ([4b4bf10](https://github.com/project-kardeshev/ao-sdk/commit/4b4bf10c588f83c64ab86941f1c2b69e7ad34f97))
+* **build:** remove build files ([6e3d94e](https://github.com/project-kardeshev/ao-sdk/commit/6e3d94ea88a719681df4088434c18594e8a69625))
+* **diagrams:** add diagrams folder ([6e6daca](https://github.com/project-kardeshev/ao-sdk/commit/6e6dacad6646e9b64d7f215955132e027f74ae03))
+* **diagrams:** add diagrams folder ([515c5ae](https://github.com/project-kardeshev/ao-sdk/commit/515c5ae8c46567a1ddd48285534b55586ce0232e))
+* **docs:** add docs to init on process ([5534573](https://github.com/project-kardeshev/ao-sdk/commit/5534573aeccb1ae1f49a05d9b76d545188a0c694))
+* **docs:** enable local search in docs ([fda010a](https://github.com/project-kardeshev/ao-sdk/commit/fda010a59c93c0f085c597dc74da16731e5ccdb8))
+* **lint:** add disable lint comments on anys ([2540f4b](https://github.com/project-kardeshev/ao-sdk/commit/2540f4b24496ff5de3be4d8cd7e3943127ddbd0d))
+* **logger:** remove bunyan logger ([a3c5557](https://github.com/project-kardeshev/ao-sdk/commit/a3c5557fbb3f50fa37f21dbb84d5dff34e925a9e))
+* **merge:** commit merge ([1ff734e](https://github.com/project-kardeshev/ao-sdk/commit/1ff734e95ed70ba6642c488ec5f1be35d9064355))
+* **types:** remove jest from types ([f0c4e21](https://github.com/project-kardeshev/ao-sdk/commit/f0c4e21ee973d1013b7a3fafa27a9c77d45979ba))
+* **update version:** chmod script in action ([e9275cb](https://github.com/project-kardeshev/ao-sdk/commit/e9275cbddbb08693e08e85a619e555ce96e05f91))
+* **versioning:** move versioning script back to tld ([2bd0317](https://github.com/project-kardeshev/ao-sdk/commit/2bd03177ed1df7630b0cc50bc2d6b9569edd481f))
+
 # 1.0.0 (2024-10-27)
 
 
