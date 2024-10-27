@@ -33,6 +33,11 @@ export class Process implements AoProcess {
     this.processId = processId;
   }
 
+  /**
+   *
+   * @param config
+   * @returns - ProcessReadable if no signer is provided, ProcessWritable if signer is provided
+   */
   static init(
     config: ProcessConfig & { signer: undefined | AoSigner },
   ): ProcessReadable | ProcessWritable;
