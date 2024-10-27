@@ -87,9 +87,9 @@
     "axios": "^1.7.7",
     "axios-retry": "^4.5.0",
     "better-sqlite3": "^11.3.0",
-    "bunyan": "^1.8.15",
     "eventemitter3": "^5.0.1",
     "libhoney": "^4.3.0",
+    "winston": "^3.15.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
