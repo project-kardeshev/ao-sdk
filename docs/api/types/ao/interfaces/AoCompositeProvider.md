@@ -14,27 +14,27 @@
 
 #### Defined in
 
-[types/ao.ts:267](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L267)
+[src/types/ao.ts:271](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L271)
 
 ***
 
-### eventManager
+### eventManager?
 
-> **eventManager**: [`EventVacuum`](../../../common/events/event-vacuum/classes/EventVacuum.md)
+> `optional` **eventManager**: [`EventVacuum`](../../../common/events/event-vacuum/classes/EventVacuum.md)
 
 #### Defined in
 
-[types/ao.ts:271](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L271)
+[src/types/ao.ts:275](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L275)
 
 ***
 
-### memoryManager
+### memoryManager?
 
-> **memoryManager**: [`AoMemoryProvider`](AoMemoryProvider.md)
+> `optional` **memoryManager**: [`AoMemoryProvider`](AoMemoryProvider.md)
 
 #### Defined in
 
-[types/ao.ts:272](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L272)
+[src/types/ao.ts:276](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L276)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[types/ao.ts:268](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L268)
+[src/types/ao.ts:272](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L272)
 
 ***
 
@@ -54,49 +54,19 @@
 
 #### Defined in
 
-[types/ao.ts:269](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L269)
+[src/types/ao.ts:273](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L273)
 
 ***
 
-### txCache
+### txCache?
 
-> **txCache**: [`AoMessageCache`](../../cache/interfaces/AoMessageCache.md)
+> `optional` **txCache**: [`AoMessageCache`](../../cache/interfaces/AoMessageCache.md)
 
 #### Defined in
 
-[types/ao.ts:270](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L270)
+[src/types/ao.ts:274](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L274)
 
 ## Methods
-
-### debug()
-
-> **debug**(`p`): `Promise`\<`any`\>
-
-#### Parameters
-
-• **p**
-
-• **p.messageId?**: `string`
-
-• **p.page?**: `number`
-
-• **p.pageSize?**: `number`
-
-• **p.processId**: `string`
-
-#### Returns
-
-`Promise`\<`any`\>
-
-#### Inherited from
-
-[`AoMU`](AoMU.md).[`debug`](AoMU.md#debug)
-
-#### Defined in
-
-[types/ao.ts:214](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L214)
-
-***
 
 ### dryrun()
 
@@ -106,7 +76,7 @@
 
 • **p**
 
-• **p.message**: `Partial`\<[`AoMessage`](../type-aliases/AoMessage.md)\>
+• **p.message**: `Partial`\<[`AoMessage`](../type-aliases/AoMessage.md)\> & `object`
 
 • **options?**: [`AoEvaluationOptions`](../type-aliases/AoEvaluationOptions.md)
 
@@ -120,7 +90,31 @@
 
 #### Defined in
 
-[types/ao.ts:192](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L192)
+[src/types/ao.ts:185](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L185)
+
+***
+
+### getProcess()
+
+> **getProcess**(`p`): `Promise`\<`Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\>\>
+
+#### Parameters
+
+• **p**
+
+• **p.processId**: `string`
+
+#### Returns
+
+`Promise`\<`Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\>\>
+
+#### Inherited from
+
+[`AoSU`](AoSU.md).[`getProcess`](AoSU.md#getprocess)
+
+#### Defined in
+
+[src/types/ao.ts:267](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L267)
 
 ***
 
@@ -146,7 +140,7 @@
 
 #### Defined in
 
-[types/ao.ts:259](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L259)
+[src/types/ao.ts:262](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L262)
 
 ***
 
@@ -158,13 +152,13 @@
 
 • **p**
 
-• **p.from?**: `number`
+• **p.from?**: `string`
 
 • **p.limit?**: `number`
 
 • **p.processId**: `string`
 
-• **p.to?**: `number`
+• **p.to?**: `string`
 
 #### Returns
 
@@ -176,7 +170,7 @@
 
 #### Defined in
 
-[types/ao.ts:252](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L252)
+[src/types/ao.ts:255](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L255)
 
 ***
 
@@ -186,11 +180,7 @@
 
 #### Parameters
 
-• **p**
-
-• **p.message**: `Partial`\<[`AoMessage`](../type-aliases/AoMessage.md)\>
-
-• **p.signer?**: [`AoSigner`](../type-aliases/AoSigner.md)
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
 
 • **options?**: [`AoEvaluationOptions`](../type-aliases/AoEvaluationOptions.md)
 
@@ -204,25 +194,21 @@
 
 #### Defined in
 
-[types/ao.ts:205](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L205)
+[src/types/ao.ts:204](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L204)
 
 ***
 
 ### monitor()
 
-> **monitor**(`p`): `Promise`\<`void`\>
+> **monitor**(`p`): `Promise`\<`string`\>
 
 #### Parameters
 
-• **p**
-
-• **p.processId**: `string`
-
-• **p.signer**: [`AoSigner`](../type-aliases/AoSigner.md)
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`string`\>
 
 #### Inherited from
 
@@ -230,7 +216,7 @@
 
 #### Defined in
 
-[types/ao.ts:212](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L212)
+[src/types/ao.ts:211](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L211)
 
 ***
 
@@ -244,6 +230,8 @@
 
 • **p.messageId**: `string`
 
+• **p.processId?**: `string`
+
 • **options?**: [`AoEvaluationOptions`](../type-aliases/AoEvaluationOptions.md)
 
 #### Returns
@@ -256,13 +244,13 @@
 
 #### Defined in
 
-[types/ao.ts:196](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L196)
+[src/types/ao.ts:189](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L189)
 
 ***
 
-### unmonitor()
+### state()
 
-> **unmonitor**(`p`): `Promise`\<`void`\>
+> **state**(`p`, `options`?): `Promise`\<`Memory`\>
 
 #### Parameters
 
@@ -270,11 +258,33 @@
 
 • **p.processId**: `string`
 
-• **p.signer**: [`AoSigner`](../type-aliases/AoSigner.md)
+• **options?**: [`AoEvaluationOptions`](../type-aliases/AoEvaluationOptions.md)
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`Memory`\>
+
+#### Inherited from
+
+[`AoCU`](AoCU.md).[`state`](AoCU.md#state)
+
+#### Defined in
+
+[src/types/ao.ts:197](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L197)
+
+***
+
+### unmonitor()
+
+> **unmonitor**(`p`): `Promise`\<`string`\>
+
+#### Parameters
+
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
+
+#### Returns
+
+`Promise`\<`string`\>
 
 #### Inherited from
 
@@ -282,4 +292,4 @@
 
 #### Defined in
 
-[types/ao.ts:213](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L213)
+[src/types/ao.ts:217](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L217)

@@ -9,7 +9,3 @@
 - [Process](classes/Process.md)
 - [ProcessReadable](classes/ProcessReadable.md)
 - [ProcessWritable](classes/ProcessWritable.md)
-
-### Type Aliases
-
-- [ProcessConfig](type-aliases/ProcessConfig.md)

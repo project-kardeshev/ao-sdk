@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:5](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L5)
+[src/common/events/event-vacuum.ts:5](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L5)
 
 ***
 
@@ -32,4 +32,4 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:4](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L4)
+[src/common/events/event-vacuum.ts:4](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L4)

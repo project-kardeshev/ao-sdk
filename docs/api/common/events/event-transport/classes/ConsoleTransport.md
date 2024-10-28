@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[common/events/event-transport.ts:21](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-transport.ts#L21)
+[src/common/events/event-transport.ts:20](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-transport.ts#L20)
 
 ## Properties
 
@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[common/events/event-transport.ts:20](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-transport.ts#L20)
+[src/common/events/event-transport.ts:19](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-transport.ts#L19)
 
 ## Methods
 
@@ -58,4 +58,4 @@
 
 #### Defined in
 
-[common/events/event-transport.ts:25](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-transport.ts#L25)
+[src/common/events/event-transport.ts:24](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-transport.ts#L24)

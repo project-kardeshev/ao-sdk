@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[types/ao.ts:174](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L174)
+[src/types/ao.ts:166](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L166)
 
 ***
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[types/ao.ts:175](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L175)
+[src/types/ao.ts:167](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L167)
 
 ## Methods
 
@@ -42,7 +42,7 @@
 
 #### Defined in
 
-[types/ao.ts:176](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L176)
+[src/types/ao.ts:168](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L168)
 
 ***
 
@@ -56,7 +56,7 @@
 
 #### Defined in
 
-[types/ao.ts:182](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L182)
+[src/types/ao.ts:174](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L174)
 
 ***
 
@@ -74,7 +74,7 @@
 
 #### Defined in
 
-[types/ao.ts:180](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L180)
+[src/types/ao.ts:172](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L172)
 
 ***
 
@@ -88,4 +88,4 @@
 
 #### Defined in
 
-[types/ao.ts:181](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L181)
+[src/types/ao.ts:173](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L173)

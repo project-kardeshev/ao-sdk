@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[types/ao.ts:277](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L277)
+[src/types/ao.ts:295](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L295)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[types/ao.ts:276](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L276)
+[src/types/ao.ts:294](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L294)
 
 ***
 
@@ -34,4 +34,4 @@
 
 #### Defined in
 
-[types/ao.ts:278](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L278)
+[src/types/ao.ts:296](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L296)

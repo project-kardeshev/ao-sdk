@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[utils/logger.ts:31](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L31)
+[src/utils/logger.ts:16](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L16)
 
 ***
 
@@ -38,7 +38,7 @@
 
 #### Defined in
 
-[utils/logger.ts:30](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L30)
+[src/utils/logger.ts:15](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L15)
 
 ***
 
@@ -58,7 +58,7 @@
 
 #### Defined in
 
-[utils/logger.ts:29](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L29)
+[src/utils/logger.ts:14](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L14)
 
 ***
 
@@ -78,7 +78,7 @@
 
 #### Defined in
 
-[utils/logger.ts:27](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L27)
+[src/utils/logger.ts:12](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L12)
 
 ***
 
@@ -96,7 +96,7 @@
 
 #### Defined in
 
-[utils/logger.ts:26](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L26)
+[src/utils/logger.ts:11](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L11)
 
 ***
 
@@ -116,4 +116,4 @@
 
 #### Defined in
 
-[utils/logger.ts:28](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L28)
+[src/utils/logger.ts:13](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L13)

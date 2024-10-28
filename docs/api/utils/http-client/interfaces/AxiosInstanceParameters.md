@@ -10,7 +10,7 @@
 
 #### Defined in
 
-[utils/http-client.ts:23](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/http-client.ts#L23)
+[src/utils/http-client.ts:8](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/http-client.ts#L8)
 
 ***
 
@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[utils/http-client.ts:25](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/http-client.ts#L25)
+[src/utils/http-client.ts:10](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/http-client.ts#L10)
 
 ***
 
@@ -30,4 +30,4 @@
 
 #### Defined in
 
-[utils/http-client.ts:24](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/http-client.ts#L24)
+[src/utils/http-client.ts:9](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/http-client.ts#L9)

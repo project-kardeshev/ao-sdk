@@ -6,6 +6,10 @@
 
 ## Type declaration
 
+### fromTimestamp?
+
+> `optional` **fromTimestamp**: `EpochTimeStamp`
+
 ### memory?
 
 > `optional` **memory**: `WebAssembly.Memory`
@@ -18,10 +22,10 @@
 
 > `optional` **processEvents**: `boolean`
 
-### timestamp?
+### toTimestamp?
 
-> `optional` **timestamp**: `number`
+> `optional` **toTimestamp**: `EpochTimeStamp`
 
 ## Defined in
 
-[types/ao.ts:185](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L185)
+[src/types/ao.ts:177](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L177)

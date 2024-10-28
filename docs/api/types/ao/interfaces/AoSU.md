@@ -8,6 +8,26 @@
 
 ## Methods
 
+### getProcess()
+
+> **getProcess**(`p`): `Promise`\<`Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\>\>
+
+#### Parameters
+
+• **p**
+
+• **p.processId**: `string`
+
+#### Returns
+
+`Promise`\<`Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\>\>
+
+#### Defined in
+
+[src/types/ao.ts:267](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L267)
+
+***
+
 ### getProcessMessage()
 
 > **getProcessMessage**(`p`): `Promise`\<[`AoSUMessageNode`](../type-aliases/AoSUMessageNode.md)\>
@@ -26,7 +46,7 @@
 
 #### Defined in
 
-[types/ao.ts:259](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L259)
+[src/types/ao.ts:262](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L262)
 
 ***
 
@@ -38,13 +58,13 @@
 
 • **p**
 
-• **p.from?**: `number`
+• **p.from?**: `string`
 
 • **p.limit?**: `number`
 
 • **p.processId**: `string`
 
-• **p.to?**: `number`
+• **p.to?**: `string`
 
 #### Returns
 
@@ -52,4 +72,4 @@
 
 #### Defined in
 
-[types/ao.ts:252](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L252)
+[src/types/ao.ts:255](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L255)

@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:10](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L10)
+[src/common/events/event-vacuum.ts:10](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L10)
 
 ## Properties
 
@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:9](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L9)
+[src/common/events/event-vacuum.ts:9](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L9)
 
 ## Methods
 
@@ -58,7 +58,7 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:53](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L53)
+[src/common/events/event-vacuum.ts:58](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L58)
 
 ***
 
@@ -76,7 +76,7 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:34](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L34)
+[src/common/events/event-vacuum.ts:39](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L39)
 
 ***
 
@@ -94,7 +94,7 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:38](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L38)
+[src/common/events/event-vacuum.ts:43](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L43)
 
 ***
 
@@ -112,7 +112,7 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:24](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L24)
+[src/common/events/event-vacuum.ts:28](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L28)
 
 ***
 
@@ -138,4 +138,4 @@
 
 #### Defined in
 
-[common/events/event-vacuum.ts:14](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/events/event-vacuum.ts#L14)
+[src/common/events/event-vacuum.ts:14](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/events/event-vacuum.ts#L14)

@@ -16,7 +16,7 @@
 
 • **p**
 
-• **p.message**: `Partial`\<[`AoMessage`](../type-aliases/AoMessage.md)\>
+• **p.message**: `Partial`\<[`AoMessage`](../type-aliases/AoMessage.md)\> & `object`
 
 • **options?**: [`AoEvaluationOptions`](../type-aliases/AoEvaluationOptions.md)
 
@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[types/ao.ts:192](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L192)
+[src/types/ao.ts:185](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L185)
 
 ***
 
@@ -40,6 +40,8 @@
 
 • **p.messageId**: `string`
 
+• **p.processId?**: `string`
+
 • **options?**: [`AoEvaluationOptions`](../type-aliases/AoEvaluationOptions.md)
 
 #### Returns
@@ -48,4 +50,26 @@
 
 #### Defined in
 
-[types/ao.ts:196](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L196)
+[src/types/ao.ts:189](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L189)
+
+***
+
+### state()
+
+> **state**(`p`, `options`?): `Promise`\<`Memory`\>
+
+#### Parameters
+
+• **p**
+
+• **p.processId**: `string`
+
+• **options?**: [`AoEvaluationOptions`](../type-aliases/AoEvaluationOptions.md)
+
+#### Returns
+
+`Promise`\<`Memory`\>
+
+#### Defined in
+
+[src/types/ao.ts:197](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L197)

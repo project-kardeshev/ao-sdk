@@ -18,7 +18,7 @@
 
 #### Parameters
 
-• **\_\_namedParameters**: [`ProcessConfig`](../type-aliases/ProcessConfig.md) & `object`
+• **\_\_namedParameters**: [`WritableProcessConfig`](../../../../types/ao/type-aliases/WritableProcessConfig.md)
 
 #### Returns
 
@@ -30,61 +30,61 @@
 
 #### Defined in
 
-common/process/process.ts:81
+[src/common/process/process.ts:138](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L138)
 
 ## Properties
 
 ### ao
 
-> `readonly` **ao**: [`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md)
+> **ao**: [`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md)
 
 #### Implementation of
 
 [`AoProcessWrite`](../../../../types/ao/interfaces/AoProcessWrite.md).[`ao`](../../../../types/ao/interfaces/AoProcessWrite.md#ao)
 
-#### Inherited from
+#### Overrides
 
 [`ProcessReadable`](ProcessReadable.md).[`ao`](ProcessReadable.md#ao)
 
 #### Defined in
 
-common/process/process.ts:19
+[src/common/process/process.ts:135](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L135)
 
 ***
 
 ### logger
 
-> `readonly` **logger**: [`Logger`](../../../../utils/logger/classes/Logger.md)
+> **logger**: [`Logger`](../../../../utils/logger/classes/Logger.md)
 
 #### Implementation of
 
 [`AoProcessWrite`](../../../../types/ao/interfaces/AoProcessWrite.md).[`logger`](../../../../types/ao/interfaces/AoProcessWrite.md#logger)
 
-#### Inherited from
+#### Overrides
 
 [`ProcessReadable`](ProcessReadable.md).[`logger`](ProcessReadable.md#logger)
 
 #### Defined in
 
-common/process/process.ts:18
+[src/common/process/process.ts:134](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L134)
 
 ***
 
 ### processId
 
-> `readonly` **processId**: `string`
+> **processId**: `string`
 
 #### Implementation of
 
 [`AoProcessWrite`](../../../../types/ao/interfaces/AoProcessWrite.md).[`processId`](../../../../types/ao/interfaces/AoProcessWrite.md#processid)
 
-#### Inherited from
+#### Overrides
 
 [`ProcessReadable`](ProcessReadable.md).[`processId`](ProcessReadable.md#processid)
 
 #### Defined in
 
-common/process/process.ts:20
+[src/common/process/process.ts:136](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L136)
 
 ***
 
@@ -98,7 +98,7 @@ common/process/process.ts:20
 
 #### Defined in
 
-common/process/process.ts:80
+[src/common/process/process.ts:137](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L137)
 
 ## Methods
 
@@ -113,8 +113,6 @@ common/process/process.ts:80
 • **\_\_namedParameters.data?**: `string` \| `number`
 
 • **\_\_namedParameters.tags?**: `object`[]
-
-• **\_\_namedParameters.target?**: `string`
 
 • **options?**: [`AoEvaluationOptions`](../../../../types/ao/type-aliases/AoEvaluationOptions.md)
 
@@ -132,7 +130,7 @@ common/process/process.ts:80
 
 #### Defined in
 
-common/process/process.ts:41
+[src/common/process/process.ts:97](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L97)
 
 ***
 
@@ -144,11 +142,9 @@ common/process/process.ts:41
 
 • **\_\_namedParameters**
 
-• **\_\_namedParameters.data?**: `string` \| `number`
+• **\_\_namedParameters.data?**: `string`
 
 • **\_\_namedParameters.tags?**: `object`[]
-
-• **\_\_namedParameters.target?**: `string`
 
 • **options?**: [`AoEvaluationOptions`](../../../../types/ao/type-aliases/AoEvaluationOptions.md)
 
@@ -162,4 +158,4 @@ common/process/process.ts:41
 
 #### Defined in
 
-common/process/process.ts:86
+[src/common/process/process.ts:143](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L143)

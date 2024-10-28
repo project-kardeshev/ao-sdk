@@ -1,27 +1,8 @@
-import { DataItem } from '@dha-team/arbundles';
-import {
-  dryrun,
-  message,
-  monitor,
-  result,
-  results,
-  spawn,
-  unmonitor,
-} from '@permaweb/aoconnect';
+import { DataItem, JWKInterface, Signer } from '@dha-team/arbundles';
 
 import { EventVacuum } from '../common/index.js';
 import { Logger } from '../utils/logger.js';
 import { AoMessageCache } from './cache.js';
-
-export interface AoClient {
-  result: typeof result;
-  results: typeof results;
-  message: typeof message;
-  spawn: typeof spawn;
-  monitor: typeof monitor;
-  unmonitor: typeof unmonitor;
-  dryrun: typeof dryrun;
-}
 
 export type AoMessage = {
   Data: string | number;
@@ -167,6 +148,12 @@ export type AoCheckpoint = {
 export type DataItemPartial = Partial<
   Pick<DataItem, 'tags' | 'data' | 'anchor'>
 >;
+
+export type DataItemSignatureProvider =
+  | JWKInterface
+  | string /// eth private key
+  | Window['arweaveWallet']
+  | Signer;
 
 export type AoSigner = (args: {
   data?: string | Buffer;

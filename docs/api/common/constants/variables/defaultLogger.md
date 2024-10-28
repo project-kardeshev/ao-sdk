@@ -6,4 +6,4 @@
 
 ## Defined in
 
-[common/constants.ts:9](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/common/constants.ts#L9)
+[src/common/constants.ts:8](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/constants.ts#L8)
