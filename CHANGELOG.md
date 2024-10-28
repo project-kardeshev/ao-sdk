@@ -7,6 +7,18 @@
 * **docs:** update jsdoc ([29ba919](https://github.com/project-kardeshev/ao-sdk/commit/29ba9191b72cefc7427e597943ed259e0b19fcd6))
 * **install:** change postinstall to prepare ([88c7eeb](https://github.com/project-kardeshev/ao-sdk/commit/88c7eeb7feaf9405ad0221079621a5f325ca3a23))
 * **install:** remove prepare command ([a84e411](https://github.com/project-kardeshev/ao-sdk/commit/a84e4115f9ea7262bfb98487cf488500b05b09b3))
+* **package:** fix husky call on install ([2c47860](https://github.com/project-kardeshev/ao-sdk/commit/2c478608c5df534a7d720fee97792335589bff6c))
+* **version:** bump version ([349f903](https://github.com/project-kardeshev/ao-sdk/commit/349f903d23e85bf7b41fb32fe7c18bdfd5eb614a))
+
+# [1.0.0-alpha.2](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2024-10-28)
+
+
+### Bug Fixes
+
+* **comment:** docs ([37ff11b](https://github.com/project-kardeshev/ao-sdk/commit/37ff11ba5e418a5a76b0d167298776d7b07943e7))
+* **docs:** update jsdoc ([29ba919](https://github.com/project-kardeshev/ao-sdk/commit/29ba9191b72cefc7427e597943ed259e0b19fcd6))
+* **install:** change postinstall to prepare ([88c7eeb](https://github.com/project-kardeshev/ao-sdk/commit/88c7eeb7feaf9405ad0221079621a5f325ca3a23))
+* **install:** remove prepare command ([a84e411](https://github.com/project-kardeshev/ao-sdk/commit/a84e4115f9ea7262bfb98487cf488500b05b09b3))
 * **version:** bump version ([349f903](https://github.com/project-kardeshev/ao-sdk/commit/349f903d23e85bf7b41fb32fe7c18bdfd5eb614a))
 
 # [1.0.0-alpha.2](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2024-10-28)
