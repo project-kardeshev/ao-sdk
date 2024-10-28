@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2024-10-28)
+
+
+### Bug Fixes
+
+* **version:** bump version ([31648c8](https://github.com/project-kardeshev/ao-sdk/commit/31648c83633c6b962bd14cf6f4e4826fd9297c56))
+
 # 1.0.3 (2024-10-28)
 
 
