@@ -9,7 +9,7 @@
     "moduleResolution": "NodeNext",
     "module": "nodenext",
     "alwaysStrict": true,
-    "types": ["node"],
+    "types": ["node", "arconnect"],
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,

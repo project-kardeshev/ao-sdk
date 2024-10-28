@@ -8,43 +8,13 @@
 
 ## Methods
 
-### debug()
-
-> **debug**(`p`): `Promise`\<`any`\>
-
-#### Parameters
-
-• **p**
-
-• **p.messageId?**: `string`
-
-• **p.page?**: `number`
-
-• **p.pageSize?**: `number`
-
-• **p.processId**: `string`
-
-#### Returns
-
-`Promise`\<`any`\>
-
-#### Defined in
-
-[types/ao.ts:214](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L214)
-
-***
-
 ### message()
 
 > **message**(`p`, `options`?): `Promise`\<`string`\>
 
 #### Parameters
 
-• **p**
-
-• **p.message**: `Partial`\<[`AoMessage`](../type-aliases/AoMessage.md)\>
-
-• **p.signer?**: [`AoSigner`](../type-aliases/AoSigner.md)
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
 
 • **options?**: [`AoEvaluationOptions`](../type-aliases/AoEvaluationOptions.md)
 
@@ -54,48 +24,40 @@
 
 #### Defined in
 
-[types/ao.ts:205](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L205)
+[src/types/ao.ts:204](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L204)
 
 ***
 
 ### monitor()
 
-> **monitor**(`p`): `Promise`\<`void`\>
+> **monitor**(`p`): `Promise`\<`string`\>
 
 #### Parameters
 
-• **p**
-
-• **p.processId**: `string`
-
-• **p.signer**: [`AoSigner`](../type-aliases/AoSigner.md)
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`string`\>
 
 #### Defined in
 
-[types/ao.ts:212](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L212)
+[src/types/ao.ts:211](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L211)
 
 ***
 
 ### unmonitor()
 
-> **unmonitor**(`p`): `Promise`\<`void`\>
+> **unmonitor**(`p`): `Promise`\<`string`\>
 
 #### Parameters
 
-• **p**
-
-• **p.processId**: `string`
-
-• **p.signer**: [`AoSigner`](../type-aliases/AoSigner.md)
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`string`\>
 
 #### Defined in
 
-[types/ao.ts:213](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/types/ao.ts#L213)
+[src/types/ao.ts:217](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/types/ao.ts#L217)

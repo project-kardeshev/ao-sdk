@@ -2,10 +2,6 @@
 
 # Class: ProcessReadable
 
-## Extends
-
-- [`Process`](Process.md)
-
 ## Extended by
 
 - [`ProcessWritable`](ProcessWritable.md)
@@ -18,23 +14,19 @@
 
 ### new ProcessReadable()
 
-> **new ProcessReadable**(`config`): [`ProcessReadable`](ProcessReadable.md)
+> **new ProcessReadable**(`__namedParameters`): [`ProcessReadable`](ProcessReadable.md)
 
 #### Parameters
 
-• **config**: [`ProcessConfig`](../type-aliases/ProcessConfig.md)
+• **\_\_namedParameters**: [`ProcessConfig`](../../../../types/ao/type-aliases/ProcessConfig.md)
 
 #### Returns
 
 [`ProcessReadable`](ProcessReadable.md)
 
-#### Overrides
-
-[`Process`](Process.md).[`constructor`](Process.md#constructors)
-
 #### Defined in
 
-common/process/process.ts:37
+[src/common/process/process.ts:87](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L87)
 
 ## Properties
 
@@ -46,13 +38,9 @@ common/process/process.ts:37
 
 [`AoProcessRead`](../../../../types/ao/interfaces/AoProcessRead.md).[`ao`](../../../../types/ao/interfaces/AoProcessRead.md#ao)
 
-#### Inherited from
-
-[`Process`](Process.md).[`ao`](Process.md#ao)
-
 #### Defined in
 
-common/process/process.ts:19
+[src/common/process/process.ts:85](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L85)
 
 ***
 
@@ -64,13 +52,9 @@ common/process/process.ts:19
 
 [`AoProcessRead`](../../../../types/ao/interfaces/AoProcessRead.md).[`logger`](../../../../types/ao/interfaces/AoProcessRead.md#logger)
 
-#### Inherited from
-
-[`Process`](Process.md).[`logger`](Process.md#logger)
-
 #### Defined in
 
-common/process/process.ts:18
+[src/common/process/process.ts:84](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L84)
 
 ***
 
@@ -82,13 +66,9 @@ common/process/process.ts:18
 
 [`AoProcessRead`](../../../../types/ao/interfaces/AoProcessRead.md).[`processId`](../../../../types/ao/interfaces/AoProcessRead.md#processid)
 
-#### Inherited from
-
-[`Process`](Process.md).[`processId`](Process.md#processid)
-
 #### Defined in
 
-common/process/process.ts:20
+[src/common/process/process.ts:86](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L86)
 
 ## Methods
 
@@ -104,8 +84,6 @@ common/process/process.ts:20
 
 • **\_\_namedParameters.tags?**: `object`[]
 
-• **\_\_namedParameters.target?**: `string`
-
 • **options?**: [`AoEvaluationOptions`](../../../../types/ao/type-aliases/AoEvaluationOptions.md)
 
 #### Returns
@@ -118,4 +96,4 @@ common/process/process.ts:20
 
 #### Defined in
 
-common/process/process.ts:41
+[src/common/process/process.ts:97](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/process/process.ts#L97)

@@ -12,6 +12,33 @@ expose core functionalities necessary for interacting with the AO network and
 building services that can leverage its actor-oriented, message-passing, and
 decentralized computing architecture.
 
+<!-- toc -->
+
+- [Table of Contents](#table-of-contents)
+- [Processes](#processes)
+  - [Create a Process](#create-a-process)
+  - [Get Process State](#get-process-state)
+  - [Terminate Process](#terminate-process)
+- [Messages](#messages)
+  - [Send a Message](#send-a-message)
+  - [Get Message Status](#get-message-status)
+- [Scheduler Units (SUs)](#scheduler-units-sus)
+  - [Submit Data to Scheduler](#submit-data-to-scheduler)
+  - [Get Process Messages](#get-process-messages)
+  - [Get Process Message](#get-process-message)
+- [Compute Units (CUs)](#compute-units-cus)
+  - [Request Process Execution](#request-process-execution)
+  - [Get Process Output](#get-process-output)
+- [Messenger Units (MUs)](#messenger-units-mus)
+  - [Relay a Message](#relay-a-message)
+  - [Monitor a Process](#monitor-a-process)
+  - [Stop Monitoring a Process](#stop-monitoring-a-process)
+- [Cron Services](#cron-services)
+  - [Get Cron Outbox](#get-cron-outbox)
+  - [Evaluate Cron Job](#evaluate-cron-job)
+
+<!-- tocstop -->
+
 ## Table of Contents
 
 - [Processes](#processes)
@@ -148,6 +175,28 @@ Retrieves all messages for a given process managed by a Scheduler Unit.
 **Response:**
 
 - Array of messages associated with the process.
+
+---
+
+### Get Process Message
+
+This endpoint is usually requested by the Compute Unit (cu), and the response is
+a single JSON message representing a single message in ao.
+
+**Endpoint:**  
+`GET /scheduler/{message_id}?process-id={process_id}`
+
+**Params:**
+
+- `message-id`: the message to fetch
+
+**Query Params:**
+
+- `process-id`: the process id the message belongs to.
+
+**Response:**
+
+- The message DataItem
 
 ---
 

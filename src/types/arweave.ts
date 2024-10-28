@@ -1,3 +1,4 @@
+import { JWKInterface } from '@dha-team/arbundles';
 import { z } from 'zod';
 
 export const tagSchema = z.object({
@@ -17,3 +18,31 @@ export const dataItemSchema = z
     anchor: z.string().optional(),
   })
   .passthrough();
+
+export const jwkInterfaceSchema = z
+  .object({
+    kty: z.string(),
+    e: z.string(),
+    n: z.string(),
+  })
+  .passthrough();
+
+export function isJwkInterface(value: unknown): value is JWKInterface {
+  return jwkInterfaceSchema.safeParse(value).success;
+}
+
+export function isArweaveWalletApi(
+  arweaveWallet: unknown,
+): arweaveWallet is Window['arweaveWallet'] {
+  try {
+    const keys = (window?.arweaveWallet as any)
+      ? Object.keys(window.arweaveWallet)
+      : ['signDataItem', 'connect'];
+
+    return keys.every((key) =>
+      Object.keys(arweaveWallet as object).includes(key),
+    );
+  } catch {
+    return false;
+  }
+}

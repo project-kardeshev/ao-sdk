@@ -80,7 +80,6 @@
   "dependencies": {
     "@dha-team/arbundles": "^1.0.1",
     "@permaweb/ao-loader": "^0.0.36",
-    "@permaweb/aoconnect": "^0.0.59",
     "arweave": "^1.15.1",
     "axios": "^1.7.7",
     "axios-retry": "^4.5.0",
@@ -108,6 +107,7 @@
     "@types/sinon": "^10.0.15",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^6.4.0",
+    "arconnect": "^1.0.4",
     "dotenv": "^16.4.5",
     "dotenv-cli": "^7.4.2",
     "esbuild": "^0.19.2",

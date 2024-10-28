@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[utils/logger.ts:40](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L40)
+[src/utils/logger.ts:25](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L25)
 
 ## Properties
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[utils/logger.ts:38](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L38)
+[src/utils/logger.ts:23](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L23)
 
 ## Methods
 
@@ -56,7 +56,7 @@
 
 #### Defined in
 
-[utils/logger.ts:90](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L90)
+[src/utils/logger.ts:75](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L75)
 
 ***
 
@@ -80,7 +80,7 @@
 
 #### Defined in
 
-[utils/logger.ts:85](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L85)
+[src/utils/logger.ts:70](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L70)
 
 ***
 
@@ -104,7 +104,7 @@
 
 #### Defined in
 
-[utils/logger.ts:80](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L80)
+[src/utils/logger.ts:65](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L65)
 
 ***
 
@@ -128,7 +128,7 @@
 
 #### Defined in
 
-[utils/logger.ts:70](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L70)
+[src/utils/logger.ts:55](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L55)
 
 ***
 
@@ -150,7 +150,7 @@
 
 #### Defined in
 
-[utils/logger.ts:95](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L95)
+[src/utils/logger.ts:80](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L80)
 
 ***
 
@@ -174,4 +174,4 @@
 
 #### Defined in
 
-[utils/logger.ts:75](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/logger.ts#L75)
+[src/utils/logger.ts:60](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/logger.ts#L60)

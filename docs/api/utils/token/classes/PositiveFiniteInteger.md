@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[utils/token.ts:6](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L6)
+[src/utils/token.ts:6](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L6)
 
 ## Methods
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[utils/token.ts:18](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L18)
+[src/utils/token.ts:18](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L18)
 
 ***
 
@@ -66,7 +66,7 @@
 
 #### Defined in
 
-[utils/token.ts:76](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L76)
+[src/utils/token.ts:76](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L76)
 
 ***
 
@@ -84,7 +84,7 @@
 
 #### Defined in
 
-[utils/token.ts:38](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L38)
+[src/utils/token.ts:38](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L38)
 
 ***
 
@@ -102,7 +102,7 @@
 
 #### Defined in
 
-[utils/token.ts:44](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L44)
+[src/utils/token.ts:44](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L44)
 
 ***
 
@@ -120,7 +120,7 @@
 
 #### Defined in
 
-[utils/token.ts:52](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L52)
+[src/utils/token.ts:52](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L52)
 
 ***
 
@@ -138,7 +138,7 @@
 
 #### Defined in
 
-[utils/token.ts:58](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L58)
+[src/utils/token.ts:58](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L58)
 
 ***
 
@@ -156,7 +156,7 @@
 
 #### Defined in
 
-[utils/token.ts:32](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L32)
+[src/utils/token.ts:32](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L32)
 
 ***
 
@@ -174,7 +174,7 @@
 
 #### Defined in
 
-[utils/token.ts:26](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L26)
+[src/utils/token.ts:26](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L26)
 
 ***
 
@@ -188,7 +188,7 @@
 
 #### Defined in
 
-[utils/token.ts:72](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L72)
+[src/utils/token.ts:72](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L72)
 
 ***
 
@@ -204,7 +204,7 @@ Returns a string representation of an object.
 
 #### Defined in
 
-[utils/token.ts:64](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L64)
+[src/utils/token.ts:64](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L64)
 
 ***
 
@@ -220,4 +220,4 @@ Returns the primitive value of the specified object.
 
 #### Defined in
 
-[utils/token.ts:68](https://github.com/project-kardeshev/ao-sdk/blob/ff365e0a40fc954f8890beb5ffc99c09f4aa6765/src/utils/token.ts#L68)
+[src/utils/token.ts:68](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/utils/token.ts#L68)

@@ -6,7 +6,6 @@
 
 ### Interfaces
 
-- [AoClient](interfaces/AoClient.md)
 - [AoCompositeProvider](interfaces/AoCompositeProvider.md)
 - [AoCU](interfaces/AoCU.md)
 - [AoMemoryProvider](interfaces/AoMemoryProvider.md)
@@ -30,3 +29,11 @@
 - [AoSpawn](type-aliases/AoSpawn.md)
 - [AoSUMessageNode](type-aliases/AoSUMessageNode.md)
 - [AoSUPage](type-aliases/AoSUPage.md)
+- [DataItemPartial](type-aliases/DataItemPartial.md)
+- [DataItemSignatureProvider](type-aliases/DataItemSignatureProvider.md)
+- [ProcessConfig](type-aliases/ProcessConfig.md)
+- [WritableProcessConfig](type-aliases/WritableProcessConfig.md)
+
+### Functions
+
+- [isWritableProcessConfig](functions/isWritableProcessConfig.md)

@@ -4,7 +4,7 @@
 
 ## Implements
 
-- `AoServiceProvider`
+- [`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md)
 
 ## Constructors
 
@@ -18,11 +18,15 @@
 
 • **\_\_namedParameters.cu**: [`AoCU`](../../../../types/ao/interfaces/AoCU.md)
 
-• **\_\_namedParameters.eventManager**: [`EventVacuum`](../../../events/event-vacuum/classes/EventVacuum.md)
+• **\_\_namedParameters.eventManager?**: [`EventVacuum`](../../../events/event-vacuum/classes/EventVacuum.md)
+
+• **\_\_namedParameters.memoryManager?**: [`AoMemoryProvider`](../../../../types/ao/interfaces/AoMemoryProvider.md)
 
 • **\_\_namedParameters.mu**: [`AoMU`](../../../../types/ao/interfaces/AoMU.md)
 
 • **\_\_namedParameters.su**: [`AoSU`](../../../../types/ao/interfaces/AoSU.md)
+
+• **\_\_namedParameters.txCache?**: [`AoMessageCache`](../../../../types/cache/interfaces/AoMessageCache.md)
 
 #### Returns
 
@@ -30,7 +34,7 @@
 
 #### Defined in
 
-common/services/composite-provider.ts:25
+[src/common/services/composite-provider.ts:26](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L26)
 
 ## Properties
 
@@ -38,29 +42,41 @@ common/services/composite-provider.ts:25
 
 > **cu**: [`AoCU`](../../../../types/ao/interfaces/AoCU.md)
 
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`cu`](../../../../types/ao/interfaces/AoCompositeProvider.md#cu)
+
 #### Defined in
 
-common/services/composite-provider.ts:19
+[src/common/services/composite-provider.ts:19](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L19)
 
 ***
 
-### eventManager
+### eventManager?
 
-> **eventManager**: [`EventVacuum`](../../../events/event-vacuum/classes/EventVacuum.md)
+> `optional` **eventManager**: [`EventVacuum`](../../../events/event-vacuum/classes/EventVacuum.md)
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`eventManager`](../../../../types/ao/interfaces/AoCompositeProvider.md#eventmanager)
 
 #### Defined in
 
-common/services/composite-provider.ts:22
+[src/common/services/composite-provider.ts:22](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L22)
 
 ***
 
-### memoryManager
+### memoryManager?
 
-> **memoryManager**: [`AoMemoryProvider`](../../../../types/ao/interfaces/AoMemoryProvider.md)
+> `optional` **memoryManager**: [`AoMemoryProvider`](../../../../types/ao/interfaces/AoMemoryProvider.md)
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`memoryManager`](../../../../types/ao/interfaces/AoCompositeProvider.md#memorymanager)
 
 #### Defined in
 
-common/services/composite-provider.ts:23
+[src/common/services/composite-provider.ts:23](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L23)
 
 ***
 
@@ -68,9 +84,13 @@ common/services/composite-provider.ts:23
 
 > **mu**: [`AoMU`](../../../../types/ao/interfaces/AoMU.md)
 
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`mu`](../../../../types/ao/interfaces/AoCompositeProvider.md#mu)
+
 #### Defined in
 
-common/services/composite-provider.ts:20
+[src/common/services/composite-provider.ts:20](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L20)
 
 ***
 
@@ -78,11 +98,79 @@ common/services/composite-provider.ts:20
 
 > **su**: [`AoSU`](../../../../types/ao/interfaces/AoSU.md)
 
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`su`](../../../../types/ao/interfaces/AoCompositeProvider.md#su)
+
 #### Defined in
 
-common/services/composite-provider.ts:21
+[src/common/services/composite-provider.ts:21](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L21)
+
+***
+
+### txCache?
+
+> `optional` **txCache**: [`AoMessageCache`](../../../../types/cache/interfaces/AoMessageCache.md)
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`txCache`](../../../../types/ao/interfaces/AoCompositeProvider.md#txcache)
+
+#### Defined in
+
+[src/common/services/composite-provider.ts:24](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L24)
 
 ## Methods
+
+### dryrun()
+
+> **dryrun**(`p`, `options`?): `Promise`\<[`AoResult`](../../../../types/ao/type-aliases/AoResult.md)\>
+
+#### Parameters
+
+• **p**
+
+• **p.message**: `Partial`\<[`AoMessage`](../../../../types/ao/type-aliases/AoMessage.md)\> & `object`
+
+• **options?**: `Pick`\<[`AoEvaluationOptions`](../../../../types/ao/type-aliases/AoEvaluationOptions.md), `"messageId"`\>
+
+#### Returns
+
+`Promise`\<[`AoResult`](../../../../types/ao/type-aliases/AoResult.md)\>
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`dryrun`](../../../../types/ao/interfaces/AoCompositeProvider.md#dryrun)
+
+#### Defined in
+
+[src/common/services/composite-provider.ts:49](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L49)
+
+***
+
+### getProcess()
+
+> **getProcess**(`p`): `Promise`\<`Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\>\>
+
+#### Parameters
+
+• **p**
+
+• **p.processId**: `string`
+
+#### Returns
+
+`Promise`\<`Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\>\>
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`getProcess`](../../../../types/ao/interfaces/AoCompositeProvider.md#getprocess)
+
+#### Defined in
+
+[src/common/services/composite-provider.ts:114](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L114)
+
+***
 
 ### getProcessMessage()
 
@@ -100,9 +188,13 @@ common/services/composite-provider.ts:21
 
 `Promise`\<[`AoSUMessageNode`](../../../../types/ao/type-aliases/AoSUMessageNode.md)\>
 
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`getProcessMessage`](../../../../types/ao/interfaces/AoCompositeProvider.md#getprocessmessage)
+
 #### Defined in
 
-common/services/composite-provider.ts:53
+[src/common/services/composite-provider.ts:107](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L107)
 
 ***
 
@@ -114,21 +206,25 @@ common/services/composite-provider.ts:53
 
 • **p**
 
-• **p.from?**: `number`
+• **p.from?**: `string`
 
 • **p.limit?**: `number`
 
 • **p.processId**: `string`
 
-• **p.to?**: `number`
+• **p.to?**: `string`
 
 #### Returns
 
 `Promise`\<[`AoSUPage`](../../../../types/ao/type-aliases/AoSUPage.md)\>
 
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`getProcessMessages`](../../../../types/ao/interfaces/AoCompositeProvider.md#getprocessmessages)
+
 #### Defined in
 
-common/services/composite-provider.ts:44
+[src/common/services/composite-provider.ts:98](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L98)
 
 ***
 
@@ -138,11 +234,7 @@ common/services/composite-provider.ts:44
 
 #### Parameters
 
-• **p**
-
-• **p.message**: `Partial`\<[`AoMessage`](../../../../types/ao/type-aliases/AoMessage.md)\>
-
-• **p.signer?**: [`AoSigner`](../../../../types/ao/type-aliases/AoSigner.md)
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
 
 • **options?**: [`AoEvaluationOptions`](../../../../types/ao/type-aliases/AoEvaluationOptions.md)
 
@@ -150,6 +242,108 @@ common/services/composite-provider.ts:44
 
 `Promise`\<`string`\>
 
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`message`](../../../../types/ao/interfaces/AoCompositeProvider.md#message)
+
 #### Defined in
 
-common/services/composite-provider.ts:60
+[src/common/services/composite-provider.ts:70](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L70)
+
+***
+
+### monitor()
+
+> **monitor**(`p`): `Promise`\<`string`\>
+
+#### Parameters
+
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
+
+#### Returns
+
+`Promise`\<`string`\>
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`monitor`](../../../../types/ao/interfaces/AoCompositeProvider.md#monitor)
+
+#### Defined in
+
+[src/common/services/composite-provider.ts:80](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L80)
+
+***
+
+### result()
+
+> **result**(`p`, `options`?): `Promise`\<[`AoResult`](../../../../types/ao/type-aliases/AoResult.md) & `object`\>
+
+#### Parameters
+
+• **p**
+
+• **p.messageId**: `string`
+
+• **p.processId?**: `string`
+
+• **options?**: [`AoEvaluationOptions`](../../../../types/ao/type-aliases/AoEvaluationOptions.md)
+
+#### Returns
+
+`Promise`\<[`AoResult`](../../../../types/ao/type-aliases/AoResult.md) & `object`\>
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`result`](../../../../types/ao/interfaces/AoCompositeProvider.md#result)
+
+#### Defined in
+
+[src/common/services/composite-provider.ts:56](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L56)
+
+***
+
+### state()
+
+> **state**(`p`, `options`?): `Promise`\<`Memory`\>
+
+#### Parameters
+
+• **p**
+
+• **p.processId**: `string`
+
+• **options?**: [`AoEvaluationOptions`](../../../../types/ao/type-aliases/AoEvaluationOptions.md)
+
+#### Returns
+
+`Promise`\<`Memory`\>
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`state`](../../../../types/ao/interfaces/AoCompositeProvider.md#state)
+
+#### Defined in
+
+[src/common/services/composite-provider.ts:63](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L63)
+
+***
+
+### unmonitor()
+
+> **unmonitor**(`p`): `Promise`\<`string`\>
+
+#### Parameters
+
+• **p**: `Partial`\<`Pick`\<`DataItem`, `"tags"` \| `"data"` \| `"anchor"`\>\> & `object`
+
+#### Returns
+
+`Promise`\<`string`\>
+
+#### Implementation of
+
+[`AoCompositeProvider`](../../../../types/ao/interfaces/AoCompositeProvider.md).[`unmonitor`](../../../../types/ao/interfaces/AoCompositeProvider.md#unmonitor)
+
+#### Defined in
+
+[src/common/services/composite-provider.ts:89](https://github.com/project-kardeshev/ao-sdk/blob/6a8c7756719f98a5b02b986a71bc38b82aac5da1/src/common/services/composite-provider.ts#L89)

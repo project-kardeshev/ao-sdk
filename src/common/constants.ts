@@ -1,6 +1,3 @@
-import { connect } from '@permaweb/aoconnect';
-
-import { AoClient } from '../types/ao.js';
 import { Logger } from '../utils/logger.js';
 import {
   CompositeTransport,
@@ -9,10 +6,6 @@ import {
 import { EventVacuum } from './events/event-vacuum.js';
 
 export const defaultLogger = Logger.default;
-
-export const defaultAo: AoClient = connect({
-  GATEWAY_URL: 'https://arweave.net',
-});
 
 export const defaultAoEventVacuum = new EventVacuum(
   new CompositeTransport([new ConsoleTransport()]),
