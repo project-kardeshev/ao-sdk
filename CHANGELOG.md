@@ -1,3 +1,12 @@
+# [1.0.0-alpha.2](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2024-10-28)
+
+
+### Bug Fixes
+
+* **comment:** docs ([37ff11b](https://github.com/project-kardeshev/ao-sdk/commit/37ff11ba5e418a5a76b0d167298776d7b07943e7))
+* **install:** change postinstall to prepare ([88c7eeb](https://github.com/project-kardeshev/ao-sdk/commit/88c7eeb7feaf9405ad0221079621a5f325ca3a23))
+* **install:** remove prepare command ([a84e411](https://github.com/project-kardeshev/ao-sdk/commit/a84e4115f9ea7262bfb98487cf488500b05b09b3))
+
 # [1.0.0-alpha.2](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2024-10-27)
 
 
