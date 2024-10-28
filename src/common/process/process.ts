@@ -92,7 +92,7 @@ export class ProcessReadable implements AoProcessRead {
 
   /**
    * @param param0 - the tags and data to be passed to dryrun
-   * @returns
+   * @returns @type {Promise<AoResult>}
    */
   async read(
     {
