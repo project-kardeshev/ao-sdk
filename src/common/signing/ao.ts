@@ -1,6 +1,10 @@
-import { DataItem, Signer, createData } from '@dha-team/arbundles';
-import { EthereumSigner } from '@dha-team/arbundles/build/node/cjs/index';
-import { ArweaveSigner } from '@dha-team/arbundles/web';
+import {
+  ArweaveSigner,
+  DataItem,
+  EthereumSigner,
+  Signer,
+  createData,
+} from '@dha-team/arbundles';
 
 import { AoSigner, DataItemSignatureProvider } from '../../types/ao.js';
 import { isArweaveWalletApi, isJwkInterface } from '../../types/arweave.js';
