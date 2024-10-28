@@ -75,8 +75,7 @@
     "predocs": "typedoc",
     "docs:dev": "yarn predocs && vitepress dev ./docs",
     "docs:build": "yarn predocs && vitepress build ./docs",
-    "docs:publish": "yarn docs:build && node tools/deploy-docs.mjs",
-    "prepare": "husky install"
+    "docs:publish": "yarn docs:build && node tools/deploy-docs.mjs"
   },
   "dependencies": {
     "@dha-team/arbundles": "^1.0.1",
