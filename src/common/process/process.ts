@@ -90,6 +90,10 @@ export class ProcessReadable implements AoProcessRead {
     this.processId = processId;
   }
 
+  /**
+   * @param param0 - the tags and data to be passed to dryrun
+   * @returns
+   */
   async read(
     {
       tags,
