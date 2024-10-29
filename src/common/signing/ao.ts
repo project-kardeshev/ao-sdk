@@ -66,6 +66,7 @@ export function createArweaveApiDataItemSigner(
     anchor,
     createDataItem = (buf: Buffer) => new DataItem(buf),
   }) => {
+    // eslint-disable-next-line
     const view = await (arweaveWallet as any).signDataItem({
       data,
       tags,
