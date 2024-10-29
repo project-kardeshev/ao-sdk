@@ -74,7 +74,10 @@ export class Logger implements ILogger {
 
   child(name: string) {
     if (this.silent) return this;
-    return new Logger({}).child(name);
+    if (this.logger instanceof WinstonLogger) {
+      return this.logger.child(name);
+    }
+    return this as ILogger;
   }
 
   setLogLevel(level: 'info' | 'debug' | 'error' | 'warn' | 'none') {

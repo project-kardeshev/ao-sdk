@@ -35,6 +35,7 @@ export function isArweaveWalletApi(
   arweaveWallet: unknown,
 ): arweaveWallet is Window['arweaveWallet'] {
   try {
+    // eslint-disable-next-line
     const keys = (window?.arweaveWallet as any)
       ? Object.keys(window.arweaveWallet)
       : ['signDataItem', 'connect'];
