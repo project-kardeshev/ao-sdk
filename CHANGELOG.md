@@ -1,3 +1,11 @@
+# [1.0.0-alpha.3](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2024-10-29)
+
+
+### Bug Fixes
+
+* **lint:** update type casting ([59b4ca6](https://github.com/project-kardeshev/ao-sdk/commit/59b4ca6f52895a60d11928c0ccfed56e0b39bcd3))
+* **logger:** implement proper child logger ([0734407](https://github.com/project-kardeshev/ao-sdk/commit/0734407179cd46c2bcc49d44598bd1154c7123e5))
+
 # [1.0.0-alpha.2](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2024-10-28)
 
 
