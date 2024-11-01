@@ -52,21 +52,21 @@ export class Process implements AoProcess {
     return new ProcessReadable(config);
   }
 
-  static async createRemoteProcess({
+  static createRemoteProcess({
     processId,
-    cuUrl,
-    muUrl,
-    suUrl,
+    cuUrl = 'http://cu.ao-testnet.xyz',
+    muUrl = 'http://mu.ao-testnet.xyz',
+    suUrl = 'http://su.ao-testnet.xyz',
     signer,
     logger,
   }: {
     processId: string;
-    cuUrl: string;
-    muUrl: string;
-    suUrl: string;
+    cuUrl?: string;
+    muUrl?: string;
+    suUrl?: string;
     signer?: AoSigner;
     logger?: Logger;
-  }): Promise<ProcessReadable | ProcessWritable> {
+  }): ProcessReadable | ProcessWritable {
     return Process.init({
       processId,
       signer,
