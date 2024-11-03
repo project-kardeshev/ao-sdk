@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2024-11-03)
+
+
+### Bug Fixes
+
+* **api:** make create remote process not async ([dcd013b](https://github.com/project-kardeshev/ao-sdk/commit/dcd013bfeef9792956d8640197e59826559ed1bf))
+
 # [1.0.0-alpha.3](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2024-10-29)
 
 
