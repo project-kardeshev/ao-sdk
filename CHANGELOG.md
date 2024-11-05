@@ -1,3 +1,11 @@
+# [1.0.0-alpha.5](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2024-11-05)
+
+
+### Bug Fixes
+
+* **lint:** fix lint config ([c0899c6](https://github.com/project-kardeshev/ao-sdk/commit/c0899c6b37b54879dcc8082001e83fcab6260c77))
+* **test:** dont test for now ([054d99e](https://github.com/project-kardeshev/ao-sdk/commit/054d99ee7ec818d6e7738bc5d75fb9ce01f87f62))
+
 # [1.0.0-alpha.4](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2024-11-03)
 
 
