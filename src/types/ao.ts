@@ -295,26 +295,20 @@ export interface AoProcess {
   ao: AoCompositeProvider;
   processId: string;
 }
+export type AoWriteOptions = {
+  tags?: { name: string; value: string }[];
+  data?: string | number;
+  target?: string;
+};
 
 export interface AoProcessRead extends AoProcess {
-  read(
-    p: {
-      tags?: { name: string; value: string }[];
-      data?: string | number;
-      target?: string;
-    },
-    options?: AoEvaluationOptions,
-  ): Promise<AoResult>;
+  read(p: AoWriteOptions, options?: AoEvaluationOptions): Promise<AoResult>;
 }
 
 export interface AoProcessWrite extends AoProcessRead {
   signer: AoSigner;
   write(
-    p: {
-      tags?: { name: string; value: string }[];
-      data?: string | number;
-      target?: string;
-    },
+    p: AoWriteOptions,
     options?: AoEvaluationOptions,
-  ): Promise<AoResult>;
+  ): Promise<{ id: string; result: AoResult }>;
 }

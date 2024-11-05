@@ -1,10 +1,15 @@
+import { EventEmitter } from 'eventemitter3';
+
 import {
   AoCompositeProvider,
   AoEvaluationOptions,
   AoProcess,
   AoProcessRead,
   AoProcessWrite,
+  AoResult,
+  AoSUMessageNode,
   AoSigner,
+  AoWriteOptions,
   ProcessConfig,
   WritableProcessConfig,
   isWritableProcessConfig,
@@ -19,6 +24,7 @@ export class Process implements AoProcess {
   readonly logger: Logger;
   readonly ao: AoCompositeProvider;
   readonly processId: string;
+
   constructor({
     processId,
     ao,
@@ -32,7 +38,6 @@ export class Process implements AoProcess {
     this.ao = ao;
     this.processId = processId;
   }
-
   /**
    *
    * @param config
@@ -80,30 +85,51 @@ export class Process implements AoProcess {
   }
 }
 
-export class ProcessReadable implements AoProcessRead {
+export class ProcessReadable extends EventEmitter implements AoProcessRead {
   readonly logger: Logger;
   readonly ao: AoCompositeProvider;
   readonly processId: string;
+  private pollInterval?: NodeJS.Timeout;
+  lastMessageId?: string;
   constructor({ logger = defaultLogger, ao, processId }: ProcessConfig) {
+    super();
     this.logger = logger;
     this.ao = ao;
     this.processId = processId;
+  }
+
+  // Polling function to check for new transactions/messages
+  startPolling(interval = 5000) {
+    this.pollInterval = setInterval(async () => {
+      try {
+        const messages = await this.checkForNewMessages();
+        // sort messages oldest to newest
+        messages.sort((a, b) => a.timestamp - b.timestamp);
+        messages.forEach((message) => this.emit('message', message));
+        this.lastMessageId = messages.at(-1)?.message.id;
+      } catch (error) {
+        this.logger.error('Polling error:', error);
+      }
+    }, interval);
+  }
+
+  stopPolling() {
+    if (this.pollInterval) clearInterval(this.pollInterval);
+  }
+
+  private async checkForNewMessages(): Promise<AoSUMessageNode[]> {
+    const messages = await this.ao.su.getProcessMessages({
+      processId: this.processId,
+      from: this.lastMessageId,
+    });
+    return messages.edges.map((suPage) => suPage.node);
   }
 
   /**
    * @param param0 - the tags and data to be passed to dryrun
    * @returns @type {Promise<AoResult>}
    */
-  async read(
-    {
-      tags,
-      data,
-    }: {
-      tags?: { name: string; value: string }[];
-      data?: string | number;
-    },
-    options?: AoEvaluationOptions,
-  ) {
+  async read({ tags, data }: AoWriteOptions, options?: AoEvaluationOptions) {
     try {
       this.logger.info('Dryrun', {
         tags,
@@ -141,15 +167,9 @@ export class ProcessWritable extends ProcessReadable implements AoProcessWrite {
   }
 
   async write(
-    {
-      tags,
-      data,
-    }: {
-      tags?: { name: string; value: string }[];
-      data?: string;
-    },
+    { tags, data }: AoWriteOptions,
     options?: AoEvaluationOptions,
-  ) {
+  ): Promise<{ id: string; result: AoResult }> {
     try {
       this.logger.info('Message', {
         tags,
@@ -159,7 +179,7 @@ export class ProcessWritable extends ProcessReadable implements AoProcessWrite {
       const messageId = await this.ao.message(
         {
           tags,
-          data,
+          data: data?.toString(),
           processId: this.processId,
           signer: this.signer,
         },
@@ -173,7 +193,7 @@ export class ProcessWritable extends ProcessReadable implements AoProcessWrite {
       );
       this.logger.info(`Result for ${messageId}`, result);
 
-      return result;
+      return { id: messageId, result };
     } catch (error) {
       this.logger.error(error);
       throw error;
