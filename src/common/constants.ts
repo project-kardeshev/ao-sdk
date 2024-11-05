@@ -1,15 +1,16 @@
 import { Logger } from '../utils/logger.js';
-import {
-  CompositeTransport,
-  ConsoleTransport,
-} from './events/event-transport.js';
-import { EventVacuum } from './events/event-vacuum.js';
+
+// import {
+//   CompositeTransport,
+//   ConsoleTransport,
+// } from './events/event-transport.js';
+// import { EventVacuum } from './events/event-vacuum.js';
 
 export const defaultLogger = Logger.default;
 
-export const defaultAoEventVacuum = new EventVacuum(
-  new CompositeTransport([new ConsoleTransport()]),
-);
+// export const defaultAoEventVacuum = new EventVacuum(
+//   new CompositeTransport([new ConsoleTransport()]),
+// );
 
 export const ARWEAVE_TX_REGEX = new RegExp('^[a-zA-Z0-9_-]{43}$');
 

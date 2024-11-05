@@ -18,7 +18,7 @@ export class CompositeTransport {
 export class ConsoleTransport implements IEventTransport {
   logger: ILogger;
   constructor() {
-    this.logger = defaultLogger.child('console-transport');
+    this.logger = defaultLogger.child('console-transport') as ILogger;
   }
 
   sendEvents(events: AoEvent[], processId: string, nonce: number) {

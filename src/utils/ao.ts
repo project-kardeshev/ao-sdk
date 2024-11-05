@@ -1,7 +1,24 @@
 import { z } from 'zod';
 
-import { AoSigner } from '../types/ao.js';
+import { AoMessage, AoSigner } from '../types/ao.js';
 import { AoEvent } from '../types/events.js';
+
+export function findMessageByTag({
+  messages,
+  name,
+  value,
+}: {
+  messages: AoMessage[];
+  name: string;
+  value?: string;
+}): AoMessage | undefined {
+  return messages.find((message) =>
+    message.Tags?.find(
+      // Find the first message that has a tag with the given name and value - if no value is provided, just check the name
+      (tag) => tag.name === name && (value ? tag.value === value : true),
+    ),
+  );
+}
 
 export function isAoSigner(value: unknown): value is AoSigner {
   const TagSchema = z.object({
