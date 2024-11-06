@@ -1,6 +1,7 @@
 import { DataItem, JWKInterface, Signer } from '@dha-team/arbundles';
 
 import { EventVacuum } from '../common/index.js';
+import { AoClient } from '../common/process/aoconnect.js';
 import { Logger } from '../utils/logger.js';
 import { AoMessageCache } from './cache.js';
 
@@ -282,7 +283,16 @@ export type ProcessConfig = {
   processId: string;
 };
 
+export type AoConnectProcessConfig = {
+  logger?: Logger;
+  ao: AoClient;
+  processId: string;
+};
+
 export type WritableProcessConfig = ProcessConfig & { signer: AoSigner };
+export type WritableAoConnectProcessConfig = AoConnectProcessConfig & {
+  signer: AoSigner;
+};
 
 export function isWritableProcessConfig(
   config: ProcessConfig,
@@ -290,9 +300,14 @@ export function isWritableProcessConfig(
   return (config as WritableProcessConfig).signer !== undefined;
 }
 
+export function isWritableAoConnectProcessConfig(
+  config: any,
+): config is WritableAoConnectProcessConfig {
+  return config.signer !== undefined;
+}
+
 export interface AoProcess {
   logger: Logger;
-  ao: AoCompositeProvider;
   processId: string;
 }
 export type AoWriteOptions = {

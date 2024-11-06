@@ -1,7 +1,11 @@
 import { AoSigner, AoWriteOptions } from '../../../../types/ao.js';
 import { findMessageByTag } from '../../../../utils/ao.js';
 import { safeDecode } from '../../../../utils/json.js';
-import { Process, ProcessReadable, ProcessWritable } from '../../process.js';
+import {
+  AoConnectProcess,
+  AoConnectProcessReadable,
+  AoConnectProcessWritable,
+} from '../../aoconnect.js';
 
 export interface KVRegistryReadable {
   getKVStores(
@@ -21,14 +25,14 @@ export interface KVRegistryWritable {
   ): Promise<string>;
 }
 
-export class KVRegistryProcessReadable implements KVRegistryReadable {
-  readonly process: ProcessReadable;
+export class KVRegistryAoConnectProcessReadable implements KVRegistryReadable {
+  readonly process: AoConnectProcessReadable;
 
   constructor({
     process,
     processId,
   }: {
-    process?: ProcessReadable;
+    process?: AoConnectProcessReadable;
     processId?: string;
   } = {}) {
     if (!process && !processId) {
@@ -36,9 +40,9 @@ export class KVRegistryProcessReadable implements KVRegistryReadable {
     }
     this.process =
       process ??
-      (Process.createRemoteProcess({
+      (AoConnectProcess.createRemoteProcess({
         processId: processId!,
-      }) as ProcessReadable);
+      }) as AoConnectProcessReadable);
   }
 
   async getKVStores(
@@ -66,7 +70,7 @@ export class KVRegistryProcessReadable implements KVRegistryReadable {
     const message = findMessageByTag({
       messages: res.Messages,
       name: 'Action',
-      value: 'KV-Registry.Get-KV-Stores',
+      value: 'KV-Registry.Get-KV-Stores-Notice',
     });
     return message?.Data !== undefined
       ? safeDecode(message.Data)
@@ -74,23 +78,23 @@ export class KVRegistryProcessReadable implements KVRegistryReadable {
   }
 }
 
-export class KVRegistryProcessWritable
-  extends KVRegistryProcessReadable
+export class KVRegistryAoConnectProcessWritable
+  extends KVRegistryAoConnectProcessReadable
   implements KVRegistryWritable
 {
-  readonly process: ProcessWritable;
+  readonly process: AoConnectProcessWritable;
 
   constructor({
     signer,
     processId,
-    process = Process.createRemoteProcess({
+    process = AoConnectProcess.createRemoteProcess({
       signer,
       processId,
-    }) as ProcessWritable,
+    }) as AoConnectProcessWritable,
   }: {
     signer: AoSigner;
     processId: string;
-    process?: ProcessWritable;
+    process?: AoConnectProcessWritable;
   }) {
     super({ process });
     this.process = process;
@@ -111,7 +115,7 @@ export class KVRegistryProcessWritable
         ...(name
           ? [
               {
-                name: 'Name',
+                name: 'KV-Store-Name',
                 value: name,
               },
             ]

@@ -1,7 +1,11 @@
 import { AoSigner, AoWriteOptions } from '../../../../types/ao.js';
 import { findMessageByTag } from '../../../../utils/ao.js';
 import { safeDecode } from '../../../../utils/json.js';
-import { Process, ProcessReadable, ProcessWritable } from '../../process.js';
+import {
+  AoConnectProcess,
+  AoConnectProcessReadable,
+  AoConnectProcessWritable,
+} from '../../aoconnect.js';
 
 export interface KVStoreReadable {
   getInfo(options?: Omit<AoWriteOptions, 'target'>): Promise<{
@@ -74,14 +78,14 @@ export interface KVStoreWritable {
   ): Promise<string>;
 }
 
-export class KVStoreProcessReadable implements KVStoreReadable {
-  readonly process: ProcessReadable;
+export class KVStoreAoConnectProcessReadable implements KVStoreReadable {
+  readonly process: AoConnectProcessReadable;
 
   constructor({
     process,
     processId,
   }: {
-    process?: ProcessReadable;
+    process?: AoConnectProcessReadable;
     processId?: string;
   } = {}) {
     if (!process && !processId) {
@@ -89,9 +93,9 @@ export class KVStoreProcessReadable implements KVStoreReadable {
     }
     this.process =
       process ??
-      (Process.createRemoteProcess({
+      (AoConnectProcess.createRemoteProcess({
         processId: processId!,
-      }) as ProcessReadable);
+      }) as AoConnectProcessReadable);
   }
 
   async getInfo(options?: Omit<AoWriteOptions, 'target'>): Promise<{
@@ -111,6 +115,7 @@ export class KVStoreProcessReadable implements KVStoreReadable {
         ...(options?.tags ?? []),
       ],
     });
+    this.process.logger.info('KVStoreAoConnectProcessReadable getInfo', res);
 
     const message = res.Messages[0];
     const state = safeDecode(message.Data) as Record<string, any>;
@@ -204,23 +209,23 @@ export class KVStoreProcessReadable implements KVStoreReadable {
   }
 }
 
-export class KVStoreProcessWritable
-  extends KVStoreProcessReadable
+export class KVStoreAoConnectProcessWritable
+  extends KVStoreAoConnectProcessReadable
   implements KVStoreWritable
 {
-  readonly process: ProcessWritable;
+  readonly process: AoConnectProcessWritable;
 
   constructor({
     signer,
     processId,
-    process = Process.createRemoteProcess({
+    process = AoConnectProcess.createRemoteProcess({
       signer,
       processId,
-    }) as ProcessWritable,
+    }) as AoConnectProcessWritable,
   }: {
     signer: AoSigner;
     processId: string;
-    process?: ProcessWritable;
+    process?: AoConnectProcessWritable;
   }) {
     super({ process });
     this.process = process;
