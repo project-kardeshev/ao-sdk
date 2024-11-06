@@ -1,3 +1,10 @@
+# [1.0.0-alpha.6](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2024-11-06)
+
+
+### Features
+
+* **kv:** update kv impl ([08f26c7](https://github.com/project-kardeshev/ao-sdk/commit/08f26c7b13fa71e430cb98a2a9a068774c53820d))
+
 # [1.0.0-alpha.5](https://github.com/project-kardeshev/ao-sdk/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2024-11-05)
 
 
