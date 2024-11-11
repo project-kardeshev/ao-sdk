@@ -14,7 +14,7 @@ export function findMessageByTag({
 }): AoMessage | undefined {
   return messages.find((message) =>
     message.Tags?.find(
-      // Find the first message that has a tag with the given name and value - if no value is provided, just check the name
+      // Find the first message that has a tag with th∂e given name and value - if no value is provided, just check the name
       (tag) => tag.name === name && (value ? tag.value === value : true),
     ),
   );
@@ -69,3 +69,42 @@ export function isAoEvent(value: unknown): value is AoEvent {
     return false;
   }
 }
+
+// import * as wasmEdit from '@webassemblyjs/wasm-edit';
+// import * as wasmGen from '@webassemblyjs/wasm-gen';
+// import * as wasmParser from '@webassemblyjs/wasm-parser';
+
+// const { edit } = wasmEdit;
+// const { encode } = wasmGen;
+// const { decode } = wasmParser;
+
+// export async function buildWasmModuleWithInjectedMemory({
+//   wasmBinary,
+//   memory,
+// }: {
+//   wasmBinary: Uint8Array;
+//   memory: WebAssembly.Memory;
+// }): Promise<Uint8Array> {
+//   // Extract the memory buffer as a Uint8Array
+//   const memoryBuffer = new Uint8Array(memory.buffer);
+
+//   // Parse the original binary using wasm-parser
+//   const ast = decode(wasmBinary, {
+//     dump: false,
+//     ignoreCodeSection: false,
+//     ignoreDataSection: false,
+//   });
+
+//   // Modify the memory section in the binary to replace initial memory values
+//   edit(ast, {
+//     onMemorySection(section) {
+//       // Replace the initial data in the memory section with the current memory state
+//       section.data = memoryBuffer;
+//     },
+//   });
+
+//   // Encode the modified AST back to a binary format
+//   const modifiedBinary = encode(ast);
+
+//   return new Uint8Array(modifiedBinary);
+// }

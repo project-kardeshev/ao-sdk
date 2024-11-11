@@ -61,11 +61,11 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "yarn test:unit",
     "test:cjs": "cd ./tests/e2e/cjs && yarn && yarn test",
     "test:esm": "cd ./tests/e2e/esm && yarn && yarn test",
     "test:web": "cd ./tests/e2e/web && yarn && yarn test",
-    "test:unit": "jest --config=jest.config.mjs",
+    "test:unit": "vitest",
     "test:link": "yarn build && yarn link",
     "test:e2e": "yarn test:link && yarn test:cjs && yarn test:esm && yarn test:web",
     "example:esm": "cd examples/esm && yarn && node index.mjs",
@@ -80,6 +80,9 @@
   "dependencies": {
     "@dha-team/arbundles": "^1.0.1",
     "@permaweb/ao-loader": "^0.0.36",
+    "@webassemblyjs/wasm-edit": "^1.14.1",
+    "@webassemblyjs/wasm-gen": "^1.14.1",
+    "@webassemblyjs/wasm-parser": "^1.14.1",
     "arweave": "^1.15.1",
     "axios": "^1.7.7",
     "axios-retry": "^4.5.0",
@@ -107,7 +110,9 @@
     "@types/sinon": "^10.0.15",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^6.4.0",
+    "@vitest/monorepo": "../../vitest",
     "arconnect": "^1.0.4",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "dotenv-cli": "^7.4.2",
     "esbuild": "^0.19.2",
@@ -135,8 +140,10 @@
     "typedoc-plugin-markdown": "^4.2.9",
     "typedoc-vitepress-theme": "^1.0.2",
     "typescript": "^5.1.6",
+    "vite": "^5.4.10",
     "vite-plugin-node-polyfills": "^0.22.0",
-    "vitepress": "^1.4.1"
+    "vitepress": "^1.4.1",
+    "vitest": "^2.1.4"
   },
   "lint-staged": {
     "**/*.{ts,js,mjs,cjs,md,json}": [

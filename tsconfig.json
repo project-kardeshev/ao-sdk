@@ -26,5 +26,5 @@
   },
 
   "include": ["src"],
-  "exclude": ["lib", "node_modules", "bundles", "tests"]
+  "exclude": ["lib", "node_modules", "bundles", "tests", "examples"]
 }
