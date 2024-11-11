@@ -70,6 +70,8 @@ export function isAoEvent(value: unknown): value is AoEvent {
   }
 }
 
+// TODO: add util for injecting wasm memory
+
 // import * as wasmEdit from '@webassemblyjs/wasm-edit';
 // import * as wasmGen from '@webassemblyjs/wasm-gen';
 // import * as wasmParser from '@webassemblyjs/wasm-parser';

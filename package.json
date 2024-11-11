@@ -80,10 +80,8 @@
   "dependencies": {
     "@dha-team/arbundles": "^1.0.1",
     "@permaweb/ao-loader": "^0.0.36",
-    "@webassemblyjs/wasm-edit": "^1.14.1",
-    "@webassemblyjs/wasm-gen": "^1.14.1",
-    "@webassemblyjs/wasm-parser": "^1.14.1",
     "arweave": "^1.15.1",
+    "arweave-graphql": "^0.0.5",
     "axios": "^1.7.7",
     "axios-retry": "^4.5.0",
     "better-sqlite3": "^11.3.0",
