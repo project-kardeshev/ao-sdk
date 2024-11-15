@@ -34,6 +34,7 @@ export class RemoteCU implements AoCU {
       data: JSON.stringify(message),
       headers: {
         'Content-Type': 'application/json',
+        Redirect: 'follow',
       },
     });
     // TODO: might be able to return memory with this from remote CU - need timestamp of last message, which could be used to get state, then dry run the message after loading the process

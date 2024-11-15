@@ -1,7 +1,14 @@
+import * as wasmEdit from '@webassemblyjs/wasm-edit';
+import * as wasmGen from '@webassemblyjs/wasm-gen';
+import * as wasmParser from '@webassemblyjs/wasm-parser';
 import { z } from 'zod';
 
 import { AoMessage, AoSigner } from '../types/ao.js';
 import { AoEvent } from '../types/events.js';
+
+const { editWithAST } = wasmEdit;
+const { encodeU32: encode } = wasmGen;
+const { decode } = wasmParser;
 
 export function findMessageByTag({
   messages,
@@ -70,43 +77,34 @@ export function isAoEvent(value: unknown): value is AoEvent {
   }
 }
 
-// TODO: add util for injecting wasm memory
+export async function buildWasmModuleWithInjectedMemory({
+  wasmBinary,
+  memory,
+}: {
+  wasmBinary: Uint8Array;
+  memory: WebAssembly.Memory;
+}): Promise<Uint8Array> {
+  // Extract the memory buffer as a Uint8Array
+  const memoryBuffer = new Uint8Array(memory.buffer);
 
-// import * as wasmEdit from '@webassemblyjs/wasm-edit';
-// import * as wasmGen from '@webassemblyjs/wasm-gen';
-// import * as wasmParser from '@webassemblyjs/wasm-parser';
+  // Parse the original binary using wasm-parser
+  const ast = await decode(wasmBinary, {
+    dump: false,
+    ignoreCodeSection: false,
+    ignoreDataSection: false,
+  });
 
-// const { edit } = wasmEdit;
-// const { encode } = wasmGen;
-// const { decode } = wasmParser;
+  // Modify the memory section in the binary to replace initial memory values
+  await editWithAST(ast, wasmBinary, {
+    onMemorySection(section) {
+      console.log(section);
+      // Replace the initial data in the memory section with the current memory state
+      section.data = memoryBuffer;
+    },
+  });
 
-// export async function buildWasmModuleWithInjectedMemory({
-//   wasmBinary,
-//   memory,
-// }: {
-//   wasmBinary: Uint8Array;
-//   memory: WebAssembly.Memory;
-// }): Promise<Uint8Array> {
-//   // Extract the memory buffer as a Uint8Array
-//   const memoryBuffer = new Uint8Array(memory.buffer);
+  // Encode the modified AST back to a binary format
+  const modifiedBinary = await encode(ast);
 
-//   // Parse the original binary using wasm-parser
-//   const ast = decode(wasmBinary, {
-//     dump: false,
-//     ignoreCodeSection: false,
-//     ignoreDataSection: false,
-//   });
-
-//   // Modify the memory section in the binary to replace initial memory values
-//   edit(ast, {
-//     onMemorySection(section) {
-//       // Replace the initial data in the memory section with the current memory state
-//       section.data = memoryBuffer;
-//     },
-//   });
-
-//   // Encode the modified AST back to a binary format
-//   const modifiedBinary = encode(ast);
-
-//   return new Uint8Array(modifiedBinary);
-// }
+  return new Uint8Array(modifiedBinary);
+}
